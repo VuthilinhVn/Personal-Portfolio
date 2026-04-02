@@ -119,6 +119,9 @@ class LanguageManager {
 
         // Redirect to language-specific page
         const newUrl = this.getLanguageUrl(lang);
+        console.log('Current URL:', window.location.pathname);
+        console.log('Target Language:', lang);
+        console.log('New URL:', newUrl);
         window.location.href = newUrl;
     }
 }
