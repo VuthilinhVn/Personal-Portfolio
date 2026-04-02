@@ -9,17 +9,25 @@ class LanguageManager {
     // Detect language from current URL
     detectLanguageFromUrl() {
         const url = window.location.pathname;
+
         // Check for language in path (e.g., /en/, /vi/, /zh/)
+        // This handles nested pages like /Personal-Portfolio/html-version/docs/portfolio/vi/portfolio.html
         const pathMatch = url.match(/\/(en|vi|zh)\//);
         if (pathMatch) {
             return pathMatch[1];
         }
+
         // Check for index files (e.g., index-vi.html, index-zh.html)
-        if (url.endsWith('index-vi.html')) return 'vi';
-        if (url.endsWith('index-zh.html')) return 'zh';
-        // English by default for index.html, root, or any other case
-        if (url.endsWith('index.html') || url === '/') return 'en';
-        return null;
+        // This handles root pages on both localhost and GitHub Pages
+        if (url.includes('index-vi.html')) return 'vi';
+        if (url.includes('index-zh.html')) return 'zh';
+        if (url.includes('index.html')) return 'en';
+
+        // Check for trailing slash (e.g., /Personal-Portfolio/) - default to English
+        if (url.endsWith('/')) return 'en';
+
+        // Fallback to English
+        return 'en';
     }
 
     getCurrentLanguage() {
@@ -42,7 +50,13 @@ class LanguageManager {
     // Get the appropriate URL for language change
     getLanguageUrl(lang) {
         const currentUrl = window.location.pathname;
-        const isRoot = currentUrl === '/' || currentUrl.endsWith('index.html') || currentUrl.endsWith('index-vi.html') || currentUrl.endsWith('index-zh.html');
+
+        // Check if on index page (root portfolio)
+        const isRoot = currentUrl === '/' ||
+            currentUrl.endsWith('index.html') ||
+            currentUrl.endsWith('index-vi.html') ||
+            currentUrl.endsWith('index-zh.html') ||
+            currentUrl.endsWith('/');
 
         if (isRoot) {
             // On root/index page - replace file name while keeping the base path
@@ -56,6 +70,9 @@ class LanguageManager {
                     return currentUrl; // Already on English
                 } else if (currentUrl === '/') {
                     return '/index.html';
+                } else if (currentUrl.endsWith('/')) {
+                    // Path like /Personal-Portfolio/
+                    return currentUrl + 'index.html';
                 }
             } else {
                 // Going to VI or ZH: replace any index file with the target variant
@@ -67,12 +84,15 @@ class LanguageManager {
                     return currentUrl.replace(/index-zh\.html$/, `index-${lang}.html`);
                 } else if (currentUrl === '/') {
                     return `/index-${lang}.html`;
+                } else if (currentUrl.endsWith('/')) {
+                    // Path like /Personal-Portfolio/
+                    return currentUrl + `index-${lang}.html`;
                 }
             }
         }
 
         // For nested pages in language directories
-        // Check if URL contains a language directory
+        // Replace /en/, /vi/, /zh/ with target language
         if (currentUrl.includes('/en/')) {
             return currentUrl.replace(/\/en\//, `/${lang}/`);
         } else if (currentUrl.includes('/vi/')) {
