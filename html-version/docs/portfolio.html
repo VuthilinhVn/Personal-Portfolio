@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="your, keywords" />
+    <meta name="author" content="Author" />
+
+    <meta property="og:description" content="your site description" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:image" content="logo" />
+
+    <title>Portfolio</title>
+
+    <!-- Watch css, run "npm run watch" to watch the class change -->
+    <link rel="stylesheet" href="./assets/base/tailwindcss/output.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/base/styles.css">
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <!-- Minify CSS, make sure you run "npm run watch" and then 
+        "npm run minify" to generate new minify data if there is a change 
+    -->
+    <!-- <link rel="stylesheet" href="./assets/base/tailwindcss/output.min.css"> -->
+</head>
+
+<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
+    <!-- Navbar -->
+    <nav id="nav"
+        class="translate-y-auto sticky top-0 z-40 h-max w-full flex justify-center bg-primary p-6 transition duration-500 lg:p-4">
+        <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
+            <!-- Home Button -->
+            <a href="../../index.html" class="text-xl hover:text-secondary lg:text-base">
+                Home
+            </a>
+            <a href="./portfolio.html" class="text-xl hover:text-secondary lg:text-base">
+                Portfolio
+            </a>
+            <a href="./podcast.html" class="text-xl hover:text-secondary lg:text-base">
+                Podcast
+            </a>
+            <a href="./resources.html" class="text-xl hover:text-secondary lg:text-base">
+                Resources for Students
+            </a>
+        </div>
+
+
+
+        <!-- Nav Icon -->
+        <div class="z-50 flex-none">
+            <div class="flex justify-end lg:hidden">
+                <button id="navButton"
+                    class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
+                    <!-- Open Icon -->
+                    <svg class="navMenuIcon block w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
+                    </svg>
+                    <!-- End Open Icon -->
+
+                    <!-- Close Icon -->
+                    <svg class="navMenuIcon hidden w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z" />
+                    </svg>
+                    <!-- End Close Icon -->
+                </button>
+            </div>
+        </div>
+        <!-- End Nav Icon -->
+    </nav>
+    <!-- End Navbar -->
+
+
+
+
+
+
+
+    <!-- Project 1 -->
+    <section id="project1" class="project-section">
+        <a href="./projpages/movie.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Movie Recommendation Project</h3>
+                <img src="./assets/img/Projects/man.jpg" alt="Project 1 Image">
+                <p>After recent blockbusters like Spider-Man No Way Home, No Time to Die or Uncharted I wondered what
+                    would be the correlation between a movie’s budget and its success. To do this we will apply
+                    correlation models through Python in Jupyter Notebooks.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Python</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 2 -->
+    <section id="project2" class="project-section">
+        <a href="./projpages/covid.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Covid-19 Study</h3>
+                <img src="./assets/img/Projects/covid.png" alt="Project 2 Image">
+                <p>Study the impact of COVID-19 on an international level and at the national level (US). For this
+                    analysis I obtained the dataset through the government’s CDC official page, then I proceeded to
+                    query it and mine it to obtain the necessary data points, this was done through Microsoft Data
+                    Studio using SQL. After the mining of data was done I aimed to create a visualization of the study
+                    through Tableau data viz software.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Tableau</span>
+                    <span class="skill-bubble">SQL</span>
+                    <span class="skill-bubble">Data Visualization</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 3 -->
+    <section id="project3" class="project-section">
+        <a href="./projpages/collegebbal.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Sports Analytics: College Basketball</h3>
+                <img src="./assets/img/Projects/collegeball.jpg" alt="Project 3 Image">
+                <p>Understand how different statistical factors can make a college basketball team successful.</p>
+                <div class="skills">
+                    <span class="skill-bubble">R Studio</span>
+                    <span class="skill-bubble">Visualizations</span>
+                    <span class="skill-bubble">Trelliscope js</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 4 -->
+    <section id="project4" class="project-section">
+        <a href="./projpages/wc.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Sports Analytics – Using Python to create Spain’s ideal starting XI for the World</h3>
+                <img src="./assets/img/Projects/wc.jpeg" alt="Project 4 Image">
+                <p>Model Spain’s most optimal starting XI based on the video game FIFA 22 data.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Python</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 5 -->
+    <section id="project5" class="project-section">
+        <a href="./projpages/airbnb.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Airbnb Data Analysis Dashboard</h3>
+                <img src="./assets/img/Projects/air.jpg" alt="Project 5 Image">
+                <p>To gain actionable insights from Airbnb’s 2019 NYC dataset. Enabling a deep understanding of guest
+                    preferences and booking trends, with the aim to identify potential opportunities for enhancing host
+                    listings performance and improving overall guest performance.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Excel</span>
+                    <span class="skill-bubble">Pivot Tables</span>
+                    <span class="skill-bubble">Tableau</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 6 -->
+    <section id="project6" class="project-section">
+        <a href="./projpages/cl.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Champions League Analysis</h3>
+                <img src="./assets/img/Projects/champs.jpg" alt="Project 6 Image">
+                <p>The aim of this project was to conduct an in-depth analysis of the UEFA Champions League, focusing on
+                    various key performance metrics. Using Tableau, the project sought to uncover insights into the top
+                    players, clubs, and coaches in the history of the tournament. The analysis included metrics such as
+                    player appearances, club performances, all-time winners, goal statistics, coaching records, and
+                    country-wise title wins.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Excel</span>
+                    <span class="skill-bubble">Tableau</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 7 -->
+    <section id="project7" class="project-section">
+        <a href="./projpages/linkedin.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>LinkedIn Data Analysis for Content Impact and Network Growth</h3>
+                <img src="./assets/img/Projects/linkedin.png" alt="Project 7 Image">
+                <p>The primary goal of this project was to uncover patterns among my LinkedIn connections, followers,
+                    and fans, as I am a content creator focusing on data science education. The analysis aimed to
+                    understand the impact of my content on network growth, engagement metrics, and job opportunities
+                    over the past two years.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Excel</span>
+                    <span class="skill-bubble">Tableau</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 8 -->
+    <section id="project8" class="project-section">
+        <a href="./projpages/bank.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Advanced Data-Driven Dashboard for Bank Performance Analysis</h3>
+                <img src="./assets/img/Projects/money.jpg" alt="Project 8 Image">
+                <p>The primary goal of this project was to develop an advanced, visually engaging dashboard using Excel
+                    to analyze and enhance the understanding of a Boston-based bank's performance across its four
+                    branches. This tool aimed to amplify the bank's decision-making processes by offering comprehensive,
+                    data-driven insights.</p>
+                <div class="skills">
+                    <span class="skill-bubble">Excel</span>
+                    <span class="skill-bubble">Pivot Tables</span>
+                    <span class="skill-bubble">Excel VBA/Macros</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Project 9 -->
+    <section id="project9" class="project-section">
+        <a href="./projpages/pf.html" target="_blank" class="project-card-link">
+            <div class="project-card">
+                <h3>Personal Fitness Tracking Project</h3>
+                <img src="./assets/img/Projects/run.jpg" alt="Project 9 Image">
+                <p>As a fitness enthusiast, I decided to track my steps along with running activity from my Huawei
+                    watch. The study started on May 10th and ended on the 8th of June. I decided to present a Power BI
+                    dashboard in order to have a quick overview of my exercise data.</p>
+                <div class="skills">
+                    <span class="skill-bubble">PowerQuery</span>
+                    <span class="skill-bubble">PowerBI</span>
+                </div>
+            </div>
+        </a>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <!-- Footer Section -->
+    <section class="footer-section bg-dark-gray py-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-12">
+
+                <!-- Left Text Grid -->
+                <div>
+                    <h2 class="text-white text-4xl font-semibold mb-8">Contact Me</h2>
+                    <p class="text-white text-lg font-light mb-4">Boston, MA 02114</p>
+                    <p class="text-white text-lg font-light mb-8">United States</p>
+                    <a href="mailto:alfredojr.serrano@gmail.com"
+                        class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
+                        alfredojr.serrano@gmail.com</a>
+                </div>
+
+                <!-- Right Icons Grid -->
+                <div class="flex justify-end items-start">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/alfredoserrano-datascientist?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACwIT2sB8o0VIuaZfuFxz0KaMB1Lisy5C4M&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BvBgLZj4kS7eoc47NaznYOQ%3D%3D"
+                        target="_blank" class="mx-3"><img src="./assets/img/linkedin.png" alt="LinkedIn" width="32"></a>
+                        <a href="https://github.com/A1fred00-datascience" target="_blank" class="mx-3"><img
+                                src="./assets/img/github.png" alt="Github" width="32"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+
+
+</body>
+<!-- Custom Javascript -->
+<script src="./assets/custom/js/script.js"></script>
+
+<!-- Custom Javascript -->
+<script src="./html-version/docs/assets/custom/js/script.js"></script>
+
+
+<!-- Navbar Javascript -->
+<script>
+    document.getElementById("navButton").addEventListener("click", function () {
+        // Toggle the navigation links
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("hidden");
+
+        // Toggle the open and close icons
+        const openIcon = document.querySelector(".navMenuIcon.block");
+        const closeIcon = document.querySelector(".navMenuIcon.hidden");
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("block");
+    });
+
+</script>
+
+</html>

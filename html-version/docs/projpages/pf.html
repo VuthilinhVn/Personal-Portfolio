@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="your, keywords" />
+    <meta name="author" content="Author" />
+
+    <meta property="og:description" content="your site description" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:image" content="logo" />
+
+    <title>Personal Fitness Tracking Project</title>
+
+    <!-- Watch css, run "npm run watch" to watch the class change -->
+    <link rel="stylesheet" href="../assets/base/tailwindcss/output.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/base/styles.css">
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Minify CSS, make sure you run "npm run watch" and then 
+        "npm run minify" to generate new minify data if there is a change 
+    -->
+    <!-- <link rel="stylesheet" href="./assets/base/tailwindcss/output.min.css"> -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+</head>
+
+<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
+    <!-- Navbar -->
+    <nav id="nav"
+        class="translate-y-auto sticky top-0 z-40 h-max w-full flex justify-center bg-primary p-6 transition duration-500 lg:p-4">
+        <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
+            <!-- Home Button -->
+            <a href="../../../index.html" class="text-xl hover:text-secondary lg:text-base">
+                Home
+            </a>
+            <a href="../portfolio.html" class="text-xl hover:text-secondary lg:text-base">
+                Portfolio
+            </a>
+            <a href="../podcast.html" class="text-xl hover:text-secondary lg:text-base">
+                Podcast
+            </a>
+            <a href="../resources.html" class="text-xl hover:text-secondary lg:text-base">
+                Resources for Students
+            </a>
+        </div>
+
+
+
+        <!-- Nav Icon -->
+        <div class="z-50 flex-none">
+            <div class="flex justify-end lg:hidden">
+                <button id="navButton"
+                    class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
+                    <!-- Open Icon -->
+                    <svg class="navMenuIcon block w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
+                    </svg>
+                    <!-- End Open Icon -->
+
+                    <!-- Close Icon -->
+                    <svg class="navMenuIcon hidden w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z" />
+                    </svg>
+                    <!-- End Close Icon -->
+                </button>
+            </div>
+        </div>
+        <!-- End Nav Icon -->
+    </nav>
+    <!-- End Navbar -->
+
+
+
+
+    <!-- Project Section -->
+    <!-- Title -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-center px-4 lg:px-0">
+            <h2 class="text-4xl font-bold text-white">Personal Fitness Tracking Project</h2>
+        </div>
+    </section>
+
+    <!-- Header Image -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-center px-4 lg:px-0">
+            <!-- Image Container -->
+            <div class="inline-block" style="width: 100%; max-width: 700px;">
+                <img src="../assets/img/Projects/run.jpg" alt="Header Image" style="width: 100%; height: auto;"
+                    class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Objective -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
+        style="padding-top: 40px;">
+        <div class="container mx-auto text-left py-10"
+            style="padding: 10px; border: 2px solid #FFFFFF; border-radius: 15px;">
+            <h3 class="text-3xl font-bold text-white">Objective:</h3>
+            <p class="text-gray-200 mt-4">
+                As a fitness enthusiast, I decided to track my steps along with running activity from my Huawei
+                watch. The study started on May 10th and ended on the 8th of June. I decided to present a Power
+                BI dashboard in order to have a quick overview of my exercise data.
+            </p>
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <!-- Method Section with Images -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container mx-auto text-left">
+            <h3 class="text-3xl font-bold text-white">Methodology:</h3>
+
+
+
+            <!-- Text -->
+            <div class="text-white mt-8">
+                <b>Data Collection & Table Structures</b>
+            </div>
+
+            <div class="text-white mt-8">
+                <p>The necessary data was collected and structured in Excel Files. The exercise data was organized as a
+                    fact table and date & activity were organized as dimension tables for filtering the data.
+                </p>
+            </div>
+
+            <!-- Text -->
+            <div class="text-white mt-8">
+                <b>FACT_Activity</b>
+            </div>
+
+            <div class="text-white mt-8">
+                <p>Exercise data was imported from my Huawei watch, taking a focus on step and running. The date column
+                    is used as a key to connect the table with the activity dimension.
+                </p>
+            </div>
+
+            <!-- Image -->
+            <div class="relative mt-8">
+                <img src="../assets/img/pf/1.png" alt="Image 1" onclick="openLightbox(this.src);"
+                    class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            </div>
+
+            <div class="text-white mt-8">
+                <p>The steps I followed in Power Bi to transform the table for analysis puposes was:</p>
+                </br>
+                <ul class="text-gray-200 mt-4 list-disc pl-5">
+                    <li>Removed unnecessary columns and null values
+                    </li>
+                    <li>Changed the columns to have the correct data types (Date & numbers) for later calculations
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Text -->
+            <div class="text-white mt-8">
+                <b>DIM_Activity</b>
+            </div>
+
+            <div class="text-white mt-8">
+                <p>Assigns numeric keys to the different types of activities performed, in this case running and
+                    walking.
+                </p>
+            </div>
+
+
+            <!-- Image -->
+            <div class="relative mt-8">
+                <img src="../assets/img/pf/2.png" alt="Image 2" onclick="openLightbox(this.src);"
+                    class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            </div>
+
+
+            <div class="text-white mt-8">
+                <p>Steps followed for data cleansing and better data correlation:
+                </p>
+                </br>
+                <li>Renamed both columns to have more user-friendly names
+                </li>
+                <li>Capitalized both columns for better data quality
+                </li>
+            </div>
+
+            <!-- Text -->
+            <div class="text-white mt-8">
+                <b>DIM_DATE</b>
+            </div>
+
+            <div class="text-white mt-8">
+                <p>The date table provides a login of every activity along with the day of the week, the month and date
+                    on a string format.</p>
+            </div>
+
+
+            <!-- Image -->
+            <div class="relative mt-8">
+                <img src="../assets/img/pf/3.png" alt="Image 3" onclick="openLightbox(this.src);"
+                    class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            </div>
+    </section>
+
+
+    <!-- Method Section with Images -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-left" data-aos-duration="1000">
+        <div class="container mx-auto text-left">
+            <h3 class="text-3xl font-bold text-white">Data Model:</h3>
+            <!-- Text -->
+            <div class="text-white mt-8">
+                <p>Below you’ll find attached an screenshot of the data model after cleansed and prepared for
+                    PowerBI
+                </p>
+                </br>
+                </br>
+                <p>
+                    We observe that the FACT table is connected to two dimmension tables with a connect
+                    relationship establised (1 to many) between dimmension and FACT_Activity.
+                </p>
+                </br>
+                </br>
+                <p>
+                    You’ll also find a calculations table with no visible connections.
+                </p>
+            </div>
+
+
+
+            <!-- Image -->
+            <div class="relative mt-8">
+                <img src="../assets/img/pf/4.png" alt="Image 4" onclick="openLightbox(this.src);"
+                    class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            </div>
+    </section>
+
+
+    <!-- Method Section with Images -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container mx-auto text-left">
+            <h3 class="text-3xl font-bold text-white">Calculations:</h3>
+            <!-- Text -->
+            <div class="text-white mt-8">
+                <p>The following calculations were created into PowerBI using DAX (Data Analysis Expressions):
+                </p>
+                </br>
+                </br>
+                <p>
+                    The following calculations were created in the Power BI reports using DAX (Data Analysis
+                    Expressions). To lessen the extent of coding, the re-use of measures (measure branching) was
+                    emphasized:
+                </p>
+                </br>
+                </br>
+                <p>
+                    <strong>Average Steps</strong> – This is a simple AVERAGE function around the Steps column:
+                    </br>
+                    AVERAGE( FACT_Activity[Steps] )
+                </p>
+                </br>
+                </br>
+                <p>
+                    <strong>Total Steps</strong> – This is a simple SUM function around the Steps column:</br>
+                    SUM( FACT_Activity[Steps] )
+                </p>
+                </br>
+                </br>
+                <p>
+                    <strong>Steps (Running) </strong> – This is a calculation to isolate the Total Steps measure
+                    by filtering it by the “Running Activity”:</br>
+                    </br>
+                    CALCULATE(
+                    </br>
+                    [Total Steps],
+                    </br>
+                    DIM_Activity[ActivityName] = “Running”
+                    </br>
+                    )
+                </p>
+                </br>
+                </br>
+                <p>
+                    <strong>Steps (Walking) </strong> – This is a calculation to isolate the Total Steps measure
+                    by filtering it by the “Walking Activity”:</br>
+                    </br>
+                    CALCULATE(
+                    </br>
+                    [Total Steps],
+                    </br>
+                    DIM_Activity[ActivityName] = "Walking"
+                    </br>
+                    )
+                </p>
+
+                </br>
+                </br>
+                <p>
+                    <strong>Running % of Total </strong> – Here we are using two measures from before to find
+                    the % of steps that were done by running:</br>
+                    </br>
+                    DIVIDE(
+
+                    </br>
+                    [Steps (Running)],
+                    </br>
+                    [Total Steps]
+                    </br>
+                    )
+                </p>
+
+                </br>
+                </br>
+                <p>
+                    <strong>Walking % of Total </strong> – Here we are using two measures from before to find
+                    the % of steps that were done by walking:</br>
+                    </br>
+                    DIVIDE(
+
+                    </br>
+                    [Steps (Walking)],
+                    </br>
+                    [Total Steps]
+                    </br>
+                    )
+                </p>
+
+                </br>
+                </br>
+                <p>
+                    <strong>Total Steps (Cumulative) </strong> – Here we are re-using the Total Steps measure
+                    and using different functions to cumulatively calculate the total steps:</br>
+                    </br>
+                    CALCULATE(
+                    </br>
+                    [Total Steps],
+                    </br>
+                    FILTER(
+                    </br>
+                    ALLSELECTED( DIM_Date ),
+                    </br>
+                    DIM_Date[Date]
+                    </br>
+                    <= MAX( FACT_Activity[Date] ) </br>
+                        )
+                        </br>
+                        )
+                </p>
+
+                </br>
+                </br>
+                <p>
+                    <strong>Week Over Week % Change Steps </strong> – Here we are using the Total Steps measure
+                    and using different functions, with variables, to calculate the Week over Week % Change of
+                    Steps:</br>
+                    </br>
+                    VAR CurrentWeek =
+                    </br>
+                    CALCULATE(
+                    </br>
+                    [Total Steps]
+                    </br>
+                    FILTER(
+                    </br>
+                    ALL( DIM_Date ),
+                    </br>
+                    DIM_Date[Week of Year]
+                    </br>
+                    = SELECTEDVALUE( DIM_Date[Week of Year] )
+                    </br>
+                    )
+                    </br>
+                    )
+                    </br>
+                    VAR PreviousWeek =
+                    </br>
+                    CALCULATE(
+                    </br>
+                    [Total Steps],
+                    </br>
+                    FILTER(
+                    </br>
+                    ALL( DIM_Date ),
+                    </br>
+                    DIM_Date[Week of Year]
+                    </br>
+                    = SELECTEDVALUE( DIM_Date[Week of Year] ) – 1
+                    </br>
+                    )</br>
+                    )</br>
+                    RETURN</br>
+                    DIVIDE(</br>
+                    ( CurrentWeek – PreviousWeek ),</br>
+                    PreviousWeek</br>
+                    )
+                </p>
+            </div>
+    </section>
+
+
+    <!-- Conclusion Section with Images -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-left">
+            <h3 class="text-3xl font-bold text-white">Results - Dashboard:</h3>
+
+
+
+            <!-- Conclusion Text -->
+            <div class="text-white mt-8">
+                <p>The finish report consists of an interactive dashboard displaying graphics of the analyzed data. To
+                    enable these visualizations the calculation language DAX (Data Analysis Expressions) were used.</p>
+            </div>
+
+            <!-- Image -->
+            <div class="relative mt-8">
+                <img src="../assets/img/pf/5.png" alt="Image 1" onclick="openLightbox(this.src);"
+                    class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            </div>
+
+            <div class="text-white mt-8">
+                <p>Let’s select now my running data and see how it compares to the general dashboard
+                </p>
+            </div>
+
+            <!-- Image -->
+            <div class="relative mt-8">
+                <img src="../assets/img/pf/6.png" alt="Image 1" onclick="openLightbox(this.src);"
+                    class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            </div>
+
+            <div class="text-white mt-8">
+                <p>Its curious to observe that most of my fitness activity came from running, representing 70% of the
+                    total activity, averaging 13k steps per run.
+                    </br>
+                    </br>
+                    I’m definitely not a fitness guru but this is a great example of how data surrounds us in everything
+                    we do…
+                </p>
+            </div>
+
+            <!-- Conclusion Text -->
+            <div class="text-white mt-8">
+                <p>-Alfredo S.</p>
+            </div>
+    </section>
+
+
+
+
+
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close cursor-pointer" onclick="closeLightbox();">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="caption" id="caption"></div>
+    </div>
+
+
+
+
+
+
+    </main>
+    <!-- Footer Section -->
+    <section class="footer-section bg-dark-gray py-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-12">
+
+                <!-- Left Text Grid -->
+                <div>
+                    <h2 class="text-white text-4xl font-semibold mb-8">Contact Me</h2>
+                    <p class="text-white text-lg font-light mb-4">Boston, MA 02114</p>
+                    <p class="text-white text-lg font-light mb-8">United States</p>
+                    <a href="mailto:alfredojr.serrano@gmail.com"
+                        class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
+                        alfredojr.serrano@gmail.com</a>
+                </div>
+
+                <!-- Right Icons Grid -->
+                <div class="flex justify-end items-start">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/alfredoserrano-datascientist?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACwIT2sB8o0VIuaZfuFxz0KaMB1Lisy5C4M&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BvBgLZj4kS7eoc47NaznYOQ%3D%3D"
+                        target="_blank" class="mx-3"><img src="../assets/img/linkedin.png" alt="LinkedIn" width="32"></a>
+                        <a href="https://github.com/A1fred00-datascience" target="_blank" class="mx-3"><img
+                                src="../assets/img/github.png" alt="Github" width="32"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+
+
+</body>
+<!-- Custom Javascript -->
+<script src="./assets/custom/js/script.js"></script>
+
+<script>
+    document.getElementById("navButton").addEventListener("click", function () {
+        // Toggle the navigation links
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+
+        // Toggle the open and close icons
+        const openIcon = document.querySelector(".navMenuIcon.block");
+        const closeIcon = document.querySelector(".navMenuIcon.hidden");
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("block");
+    });
+</script>
+
+<!-- Transition Javascript -->
+<script>
+    AOS.init();
+</script>
+
+
+<!-- JavaScript for Lightbox -->
+<script>
+    function openLightbox(imgSrc) {
+        document.getElementById("lightbox-img").src = imgSrc;
+        document.getElementById("lightbox").style.display = "block";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+
+</html>

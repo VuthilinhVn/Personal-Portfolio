@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Add Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- Add Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <!-- Add Owl Carousel theme (optional) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="your, keywords" />
+    <meta name="author" content="Author" />
+
+    <meta property="og:description" content="your site description" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:image" content="logo" />
+
+    <title>Home</title>
+
+    <!-- Watch css, run "npm run watch" to watch the class change -->
+    <link rel="stylesheet" href="./html-version/docs/assets/base/tailwindcss/output.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./html-version/docs/assets/base/styles.css">
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <!-- Minify CSS, make sure you run "npm run watch" and then 
+        "npm run minify" to generate new minify data if there is a change 
+    -->
+    <!-- <link rel="stylesheet" href="./assets/base/tailwindcss/output.min.css"> -->
+</head>
+
+<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
+    <!-- Navbar -->
+    <nav id="nav"
+        class="translate-y-auto sticky top-0 z-40 h-max w-full flex justify-center bg-primary p-6 transition duration-500 lg:p-4">
+        <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
+            <!-- nav-links -->
+            <!-- Home Button -->
+            <a href="./index.html" class="text-xl hover:text-secondary lg:text-base">
+                Home
+            </a>
+            <a href="./html-version/docs/portfolio.html" class="text-xl hover:text-secondary lg:text-base">
+                Portfolio
+            </a>
+        </div>
+
+
+
+        <!-- Nav Icon -->
+        <div class="z-50 flex-none">
+            <div class="flex justify-end lg:hidden">
+                <button id="navButton"
+                    class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
+                    <!-- Open Icon -->
+                    <svg class="navMenuIcon block w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
+                    </svg>
+                    <!-- End Open Icon -->
+
+                    <!-- Close Icon -->
+                    <svg class="navMenuIcon hidden w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z" />
+                    </svg>
+                    <!-- End Close Icon -->
+                </button>
+            </div>
+        </div>
+        <!-- End Nav Icon -->
+    </nav>
+    <!-- End Navbar -->
+
+
+    <main class="my-12 h-full w-full flex-1 overflow-hidden">
+
+        <!-- Section One: Introduction Text -->
+        <section
+            class="mx-auto h-auto px-3 pt-20 text-primary sm:max-w-4xl md:max-w-4xl md:px-6 lg:max-w-5xl lg:pt-3 mb-10"
+            data-aos="fade-up" data-aos-duration="1000">
+            <div class="flex flex-col items-center gap-6 font-poppins font-semibold sm:gap-3">
+                <div type="button" id="homeSection"
+                    class="inline-flex flex-wrap justify-center gap-3 text-center text-5xl sm:text-6xl">
+                    <div class="inline-flex after:text-secondary after:content-[','] greeting">
+                        Hello,
+                    </div>
+                    I'm
+                    <span class="before:text-secondary before:content-['.'] name">
+                        VU THI LINH
+                    </span>
+                    <div class="titles mt-2">
+                        CS Student | Data Science Enthusiast | Aspiring Data Analyst
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section One: Introduction Text -->
+
+
+        <!-- Action Buttons -->
+        <section class="mx-auto px-3 pt-20 mb-10 sm:max-w-4xl md:max-w-4xl md:px-6 lg:max-w-5xl lg:pt-3"
+            data-aos="fade-up" data-aos-duration="1000">
+            <div class="action-buttons flex flex-row items-center justify-center gap-4 font-poppins font-semibold">
+                <!-- Resume Card -->
+                <a href="https://docs.google.com/document/d/19Tfnd_2NFtsGZjnF7YwVpip9h0R-ERzo"
+                    target="_blank" rel="noopener noreferrer" class="card resume-card">
+                    Resume
+                </a>
+                <!-- LinkedIn Card -->
+                <a href="https://www.linkedin.com/in/linh-v%C5%A9-024017335/" target="_blank"
+                    rel="noopener noreferrer" class="card linkedin-card">
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+        <!-- End Action Buttons -->
+
+
+        <div class="flex items-center justify-center min-h-screen"> <!-- Parent flex container for centering -->
+            <!-- About Me Section -->
+            <section class="bg-blue p-16 mx-auto mt-10 max-w-6xl rounded-lg shadow-md" data-aos="fade-right"
+                data-aos-duration="1000">
+                <!-- Increased padding and max-width -->
+                <div class="flex flex-wrap md:flex-nowrap">
+
+                    <!-- Profile Image -->
+                    <div class="w-full md:w-2/5 mb-8 md:mb-0 md:pr-10">
+                        <img src="./html-version/docs/assets/img/my_image.jpg" alt="VU THI LINH's Profile"
+                            class="rounded-full w-full h-auto mx-auto">
+                    </div>
+
+                    <!-- About Me Text -->
+                    <div class="w-full md:w-3/5 pl-4 md:pl-6">
+                        <h2 class="text-3xl font-bold mb-6 text-white">About Me</h2>
+
+                        <p class="mb-4 text-xl text-white">
+                            👋🏽 Hi there, I'm <strong>VU THI LINH</strong>, a passionate Data Science and
+                            Business Intelligence professional.
+                        </p>
+                        <p class="mb-4 text-xl text-white">
+                            🎓 I graduated "xếp loại" with a Master in Computer Science from Donghua
+                            University. During my time there, I not only honed my academic skills but also actively
+                            participated in extracurricular activities. Being a student and a Chinese language tutor, 
+                            I engaged deeply in my major studies while actively participating in extracurricular 
+                            activities such as poetry recitation contests and other academic competitions.
+                        </p>
+                        <p class="mb-4 text-xl text-white">
+                            💼 Professionally, as a Data Science Consultant at Management Solutions, I've consistently
+                            focused on leveraging data for transformative business solutions. Whether it's innovating in
+                            a Climate Risk Project or optimizing processes in a Digital Transformation initiative, my
+                            mission remains the same: Drive impactful change through data-driven strategies.
+                        </p>
+                        <p class="text-xl text-white">
+                            🎙 Beyond academics, I enjoy sharing knowledge and collaborating on data projects with peers.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Technical Skills Section -->
+        <section id="skills-carousel" data-aos="fade-left" data-aos-duration="1000">
+            <h2>Technical Skills</h2>
+            <div class="owl-carousel owl-theme">
+
+                <!-- Programming -->
+                <div class="item category-label">
+                    <h3>Programming</h3>
+                </div>
+
+                <!-- Python -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/python.png" alt="Python Logo">
+                    <p>Python (NumPy, Pandas, Scikit-learn, Matplotlib, Openpyxl)</p>
+                </div>
+
+                <!-- SQL -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/sql.png" alt="SQL Logo">
+                    <p>SQL</p>
+                </div>
+
+                <!-- R -->
+                <!-- <div class="item">
+                    <img src="./html-version/docs/assets/img/r.png" alt="R Logo">
+                    <p>R</p>
+                </div> -->
+
+                <!-- Prompt Engineering -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/prompt.png" alt="Prompt Engineering Logo">
+                    <p>Prompt Engineering</p>
+                </div>
+
+                <!-- Softwares -->
+                <div class="item category-label">
+                    <h3>Softwares</h3>
+                </div>
+
+                <!-- Microsoft Excel -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/excel.png" alt="Microsoft Excel Logo">
+                    <p>Microsoft Excel</p>
+                </div>
+
+                <!-- Power BI -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/powerbi.png" alt="Power BI Logo">
+                    <p>Power BI</p>
+                </div>
+
+                <!-- Tableau -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/tableau.png" alt="Tableau Logo">
+                    <p>Tableau</p>
+                </div>
+
+                <!-- VSCode -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/vscode.png" alt="VSCode Logo">
+                    <p>VSCode</p>
+                </div>
+
+                <!-- R Studio -->
+                <!-- <div class="item">
+                    <img src="./html-version/docs/assets/img/rstudio.png" alt="R Studio Logo">
+                    <p>R Studio</p>
+                </div> -->
+
+                <!-- Jupyter Notebook -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/jupyter.png" alt="Jupyter Notebook Logo">
+                    <p>Jupyter Notebook</p>
+                </div>
+
+                <!-- mySQL -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/mysql.png" alt="mySQL Logo">
+                    <p>MySQL</p>
+                </div>
+
+                <!-- MSSQL Server -->
+                <!-- <div class="item">
+                    <img src="./html-version/docs/assets/img/mssql.png" alt="MSSQL Server Logo">
+                    <p>MSSQL Server</p>
+                </div> -->
+
+                <!-- ChatGPT -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/gpt.png" alt="ChatGPT Logo">
+                    <p>ChatGPT</p>
+                </div>
+
+                <!-- Statistics & ML -->
+                <div class="item category-label">
+                    <h3>Statistics & ML</h3>
+                </div>
+
+                <!-- Statistical Modeling/Analysis -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/statistical.png" alt="Statistics Logo">
+                    <p>Statistical Modeling/Analysis</p>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/ml.png" alt="Machine Learning Logo">
+                    <p>Machine Learning (Regression, Classification, Time Series, Hierarchical Clustering, K-NN,
+                        Decision Tree)</p>
+                </div>
+
+                <!-- Project Management -->
+                <div class="item category-label">
+                    <h3>Project Management</h3>
+                </div>
+
+                <!-- Agile -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/agile.png" alt="Agile Logo">
+                    <p>Agile</p>
+                </div>
+
+                <!-- Scrum -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/scrum.png" alt="Scrum Logo">
+                    <p>Scrum</p>
+                </div>
+
+                <!-- Microsoft projects -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/msprojects.png" alt="Microsoft projects Logo">
+                    <p>Microsoft projects</p>
+                </div>
+
+                <!-- Jira -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/jira.png" alt="Jira Logo">
+                    <p>Jira</p>
+                </div>
+
+                <!-- Confluence -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/confluence.png" alt="Confluence Logo">
+                    <p>Confluence</p>
+                </div>
+
+                <!-- Figma -->
+                <div class="item">
+                    <img src="./html-version/docs/assets/img/figma.png" alt="Figma Logo">
+                    <p>Figma</p>
+                </div>
+            </div>
+            <!-- Drag -->
+            <div>
+                <p class="drag-notify">Drag to Explore</p>
+            </div>
+        </section>
+        <!-- End Tech Skills Section -->
+
+
+
+        <!-- Call to Action Section -->
+        <!-- Carousel Section -->
+        <section class="carousel-section" data-aos="fade-down" data-aos-duration="1000">
+            <h2>RECENT DATA SCIENCE PROJECTS</h2>
+
+            <div class="carousel-container">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <img src="./html-version/docs/assets/img/Projects/" alt="Project Image 1">
+                    <h2 style="font-size: 24px; margin-bottom: 5px;">Movie Recommendation Project – Python</h2>
+                    <h3 style="font-size: 18px; margin-bottom: 5px ">OBJECTIVE:</h3>
+                    <p style="font-size: 16px; margin-top: 0;">
+                        After recent blockbusters like Spider-Man No Way Home, No Time to Die or Uncharted I wondered
+                        what would be the correlation between a movie’s budget and its success. To do this we will apply
+                        correlation models through Python in Jupyter Notebooks.</p>
+
+                    <div class="btn-container">
+                        <a href="./html-version/docs/projpages/movie.html" target="_blank" class="read-more-btn">Read
+                            more</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="./html-version/docs/assets/img/Projects/" alt="Project Image 2">
+                    <h2 style="font-size: 24px; margin-bottom: 5px;">Personal Fitness Tracking Project –
+                        PowerBI/PowerQuery</h2>
+                    <h3 style="font-size: 18px; margin-bottom: 5px ">OBJECTIVE:</h3>
+                    <p style="font-size: 16px; margin-top: 0;">
+                        As a fitness enthusiast, I decided to track my steps along with running activity from my Huawei
+                        watch. The study started on May 10th and ended on the 8th of June. I decided to present a Power
+                        BI dashboard in order to have a quick overview of my exercise data</p>
+                    <div class="btn-container">
+                        <a href="./html-version/docs/projpages/pf.html" target="_blank" class="read-more-btn">Read
+                            more</a>
+                    </div>
+                </div>
+
+                <!-- prev and next buttons -->
+                <button class="carousel-nav prev">&#10094;</button>
+                <button class="carousel-nav next">&#10095;</button>
+            </div>
+
+            <!-- DOTS -->
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <!-- Nine dots corresponding to the nine slides -->
+            </div>
+        </section>
+        <!-- END Call to Action Section -->
+
+
+
+    </main>
+    <!-- Footer Section -->
+    <section class="footer-section bg-dark-gray py-10" style="margin-top: -55px;">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-12">
+
+                <!-- Left Text Grid -->
+                <div>
+                    <h2 class="text-white text-4xl font-semibold mb-8">Contact Me</h2>
+                    <p class="text-white text-lg font-light mb-4">Shanghai</p>
+                    <p class="text-white text-lg font-light mb-8">China</p>
+                    <a href="mailto:vulinhtnut@gmail.com"
+                        class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
+                        vulinhtnut@gmail.com</a>
+                </div>
+
+                <!-- Right Icons Grid -->
+                <div class="flex justify-end items-start">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/linh-v%C5%A9-024017335/"
+                            target="_blank" class="mx-3"><img src="./html-version/docs/assets/img/linkedin.png"
+                                alt="LinkedIn" width="32"></a>
+                        <a href="https://github.com/VuthilinhVn" target="_blank" class="mx-3"><img
+                                src="./html-version/docs/assets/img/github.png" alt="Github" width="32"></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+
+
+
+    <!-- Custom Javascript -->
+    <script src="./html-version/docs/assets/custom/js/script.js"></script>
+
+
+    <!-- Navbar Javascript -->
+    <script>
+        document.getElementById("navButton").addEventListener("click", function () {
+            // Toggle the navigation links
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("hidden"); 
+
+            // Toggle the open and close icons
+            const openIcon = document.querySelector(".navMenuIcon.block");
+            const closeIcon = document.querySelector(".navMenuIcon.hidden");
+            openIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("block");
+        });
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+    <script>
+        $(window).on('load', function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000, // This means every 3 seconds it will slide
+                autoplaySpeed: 1000,   // Transition will take 1 second
+                smartSpeed: 1000,      // Navigation and drag slide speed is 1 second
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!-- Carousel Javascript -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        document.querySelector('.prev').addEventListener('click', function () {
+            goToSlide(currentSlide - 1);
+        });
+
+        document.querySelector('.next').addEventListener('click', function () {
+            goToSlide(currentSlide + 1);
+        });
+
+        function goToSlide(n) {
+            slides[currentSlide].style.display = 'none';
+            dots[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].style.display = 'block';
+            dots[currentSlide].classList.add('active');
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function () {
+                goToSlide(index);
+            });
+        });
+
+        slides[currentSlide].style.display = 'block';
+    </script>
+
+
+
+    <!-- Transition Javascript -->
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

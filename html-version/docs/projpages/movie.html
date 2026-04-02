@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="your, keywords" />
+    <meta name="author" content="Author" />
+
+    <meta property="og:description" content="your site description" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:site_name" content="Site name" />
+    <meta property="og:image" content="logo" />
+
+    <title>Movie Recommendations</title>
+
+    <!-- Watch css, run "npm run watch" to watch the class change -->
+    <link rel="stylesheet" href="../assets/base/tailwindcss/output.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/base/styles.css">
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Minify CSS, make sure you run "npm run watch" and then 
+        "npm run minify" to generate new minify data if there is a change 
+    -->
+    <!-- <link rel="stylesheet" href="./assets/base/tailwindcss/output.min.css"> -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+</head>
+
+<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
+    <!-- Navbar -->
+    <nav id="nav"
+        class="translate-y-auto sticky top-0 z-40 h-max w-full flex justify-center bg-primary p-6 transition duration-500 lg:p-4">
+        <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
+            <!-- Home Button -->
+            <a href="../../../index.html" class="text-xl hover:text-secondary lg:text-base">
+                Home
+            </a>
+            <a href="../portfolio.html" class="text-xl hover:text-secondary lg:text-base">
+                Portfolio
+            </a>
+            <a href="../podcast.html" class="text-xl hover:text-secondary lg:text-base">
+                Podcast
+            </a>
+            <a href="../resources.html" class="text-xl hover:text-secondary lg:text-base">
+                Resources for Students
+            </a>
+        </div>
+
+
+
+        <!-- Nav Icon -->
+        <div class="z-50 flex-none">
+            <div class="flex justify-end lg:hidden">
+                <button id="navButton"
+                    class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
+                    <!-- Open Icon -->
+                    <svg class="navMenuIcon block w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
+                    </svg>
+                    <!-- End Open Icon -->
+
+                    <!-- Close Icon -->
+                    <svg class="navMenuIcon hidden w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z" />
+                    </svg>
+                    <!-- End Close Icon -->
+                </button>
+            </div>
+        </div>
+        <!-- End Nav Icon -->
+    </nav>
+    <!-- End Navbar -->
+
+
+
+
+    <!-- Project Section -->
+    <!-- Title -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
+        style="padding-top: 20px;">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white">Movie Recommendations Project</h2>
+        </div>
+    </section>
+
+    <!-- Header Image -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
+        style="padding-bottom: 300px;">
+        <div class="container mx-auto text-center" style="display: flex; justify-content: center;">
+            <img src="../assets/img/Projects/man.jpg" alt="Header Image" style="max-width: 60%; height: 40%;"
+                class="rounded-lg shadow-xl">
+        </div>
+    </section>
+
+
+    <!-- Objective -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-left py-10"
+            style="padding: 10px; border: 2px solid #FFFFFF; border-radius: 15px;">
+            <h3 class="text-3xl font-bold text-white">Objective:</h3>
+            <p class="text-gray-200 mt-4">
+                After recent blockbusters like Spider-Man No Way Home, No Time to Die or Uncharted I wondered what would
+                be the correlation between a movie’s budget and its success. To do this we will apply correlation models
+                through Python in Jupyter Notebooks.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- GitHub Link Button -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
+        style="padding-top: 40px;" style="padding-bottom: 40px;">
+        <div class="container mx-auto text-center">
+            <a href="https://github.com/A1fred00-datascience/Portfolio-Project---Movies-Correlation-with-Python/blob/main/%23Portfolio%20Project%20by%20Alfredo%20Serrano%20-%20Correlation%20with%20Python.ipynb"
+                target="_blank"
+                style="display: inline-block; background-color: #333; color: white; font-weight: bold; padding: 20px 30px; text-align: center; text-decoration: none; border-radius: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-size: 1.25em;">
+                View the Code on GitHub
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Method -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-left py-10">
+            <h3 class="text-3xl font-bold text-white">Methodology:</h3>
+            <p class="text-gray-200 mt-4">
+                We will start by importing the necessary libraries, pandas, numpy and seaborn. Along with that we will
+                import the database for the movie industry (Which is on a csv format). We will assign the variable “df”
+                to it to make it easier to reference later.
+                </br>
+                </br>
+                We will read the data by using the Pandas library, look for missing data and null values that we might
+                find. After that we will cleanse the data and start looking for correlations between blockbuster movies
+                and the budgets they were given.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Study Section with Images -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-left">
+            <h3 class="text-3xl font-bold text-white">Study:</h3>
+            <!-- Images Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <!-- Image 1 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/1.png" alt="Image 1" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 2 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/2.png" alt="Image 2" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 3 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/3.png" alt="Image 3" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 4 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/4.png" alt="Image 4" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 5 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/5.png" alt="Image 5" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 6 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/6.png" alt="Image 6" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 7 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/7.png" alt="Image 7" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 8 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/8.png" alt="Image 8" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 9 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/9.png" alt="Image 9" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 10 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/10.png" alt="Image 10" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 11 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/11.png" alt="Image 11" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 12 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/12.png" alt="Image 12" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 13 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/13.png" alt="Image 13" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+                <!-- Image 14 -->
+                <div class="relative">
+                    <img src="../assets/img/movie/14.png" alt="Image 14" onclick="openLightbox(this.src);"
+                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                </div>
+            </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto text-left">
+            <h3 class="text-3xl font-bold text-white">Conclusion:</h3>
+            <!-- Conclusion Text -->
+            <div class="mt-8 text-white">
+                <p>As a conclusion, yes there is a positive relationship between the budget that companies have with
+                    the success of blockbuster movies. We’ve proven this by year of release along with votes and
+                    rankings.
+                    For a more in-depth explanation of the correlation visit the code on my GitHub.</p>
+                </br>
+                <p>From a personal perspective, it's safe to say that the more money is invested in a movie (CGI,
+                    marketing campaigns, press tours, castings, writers, and advertisement) the higher are the chances
+                    for a movie to succeed in the box office. Especially since today’s trends of succeeding at the box
+                    office are highly correlated to the company making the movie along with the scale of the movie
+                    itself (Spider-Man NWH generated hype the minute it was announced, and so did Avatar, James Bond,
+                    Star Wars, and so on…).</p>
+                </br>
+                <p>-Alfredo S.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+        <span class="close cursor-pointer" onclick="closeLightbox();">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="caption" id="caption"></div>
+    </div>
+
+
+    </main>
+    <!-- Footer Section -->
+    <section class="footer-section bg-dark-gray py-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-12">
+
+                <!-- Left Text Grid -->
+                <div>
+                    <h2 class="text-white text-4xl font-semibold mb-8">Contact Me</h2>
+                    <p class="text-white text-lg font-light mb-4">Boston, MA 02114</p>
+                    <p class="text-white text-lg font-light mb-8">United States</p>
+                    <a href="mailto:alfredojr.serrano@gmail.com"
+                        class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
+                        alfredojr.serrano@gmail.com</a>
+                </div>
+
+                <!-- Right Icons Grid -->
+                <div class="flex justify-end items-start">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/alfredoserrano-datascientist?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACwIT2sB8o0VIuaZfuFxz0KaMB1Lisy5C4M&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BvBgLZj4kS7eoc47NaznYOQ%3D%3D"
+                            target="_blank" class="mx-3"><img src="../assets/img/linkedin.png" alt="LinkedIn"
+                                width="32"></a>
+                        <a href="https://github.com/A1fred00-datascience" target="_blank" class="mx-3"><img
+                                src="../assets/img/github.png" alt="Github" width="32"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+
+
+</body>
+<!-- Custom Javascript -->
+<script src="./assets/custom/js/script.js"></script>
+
+<!-- Custom Javascript -->
+<script src="./html-version/docs/assets/custom/js/script.js"></script>
+
+
+<!-- Navbar Javascript -->
+<script>
+    document.getElementById("navButton").addEventListener("click", function () {
+        // Toggle the navigation links
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("hidden"); // Toggle 'hidden' instead of 'active'
+
+        // Toggle the open and close icons
+        const openIcon = document.querySelector(".navMenuIcon.block");
+        const closeIcon = document.querySelector(".navMenuIcon.hidden");
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("block");
+    });
+
+</script>
+
+<!-- Transition Javascript -->
+<script>
+    AOS.init();
+</script>
+
+
+<!-- JavaScript for Lightbox -->
+<script>
+    function openLightbox(imgSrc) {
+        document.getElementById("lightbox-img").src = imgSrc;
+        document.getElementById("lightbox").style.display = "block";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+
+</html>
