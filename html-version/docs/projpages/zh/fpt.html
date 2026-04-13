@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Dự án Khuyến nghị Phim" />
-    <meta name="keywords" content="phim, Python, dữ liệu" />
+    <meta name="description" content="FPT Play DRM Key 预算优化分析" />
+    <meta name="keywords" content="DRM, FPT Play, 数据, SQL" />
     <meta name="author" content="VU THI LINH" />
 
-    <meta property="og:description" content="Dự án Khuyến nghị Phim" />
+    <meta property="og:description" content="FPT DRM Key 预算分析与建议" />
     <meta property="og:url" content="https://example.com" />
-    <meta property="og:site_name" content="Danh mục" />
+    <meta property="og:site_name" content="作品集" />
     <meta property="og:image" content="logo" />
 
-    <title>Dự án Khuyến nghị Phim</title>
+    <title>FPT DRM Key 预算分析与建议</title>
 
     <!-- Watch css, run "npm run watch" to watch the class change -->
     <link rel="stylesheet" href="../../assets/base/tailwindcss/output.css" />
@@ -45,10 +45,10 @@
         <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
             <!-- Home Button -->
             <a href="../../../../index.html" class="text-xl hover:text-secondary lg:text-base">
-                Trang chủ
+                首页
             </a>
-            <a href="../../portfolio/vi/portfolio.html" class="text-xl hover:text-secondary lg:text-base">
-                Danh mục
+            <a href="../../portfolio/zh/portfolio.html" class="text-xl hover:text-secondary lg:text-base">
+                作品集
             </a>
         </div>
 
@@ -84,7 +84,7 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
         style="padding-top: 20px;">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white">Dự án Khuyến nghị Phim</h2>
+            <h2 class="text-4xl font-bold text-white">FPT DRM Key 预算分析与建议</h2>
         </div>
     </section>
 
@@ -92,7 +92,7 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
         style="padding-bottom: 300px;">
         <div class="container mx-auto text-center" style="display: flex; justify-content: center;">
-            <img src="../../assets/img/Projects/daniele-colucci-Smeer5L0tXM-unsplash.jpg" alt="Ảnh tiêu đề" style="max-width: 60%; height: 40%;"
+            <img src="../../assets/img/Projects/FPT.png" alt="标题图像" style="max-width: 60%; height: 40%;"
                 class="rounded-lg shadow-xl">
         </div>
     </section>
@@ -101,9 +101,12 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
         <div class="container mx-auto text-left py-10"
             style="padding: 10px; border: 2px solid #FFFFFF; border-radius: 15px;">
-            <h3 class="text-3xl font-bold text-white">Mục tiêu:</h3>
+            <h3 class="text-3xl font-bold text-white">目标：</h3>
             <p class="text-gray-200 mt-4">
-                Sau các bộ phim bom tấn gần đây như Spider-Man No Way Home, No Time to Die hoặc Uncharted, tôi tự hỏi mối tương quan giữa ngân sách của một bộ phim và thành công của nó sẽ là gì. Để làm được điều này, chúng tôi sẽ áp dụng các mô hình tương quan thông qua Python trong Jupyter Notebooks.
+                FPT 目前为 SVOD、TVOD、AVOD、K+ 和 Special 等内容套餐持有约 380,000 个 DRM 密钥。
+                但该数量可能与实际需求不匹配，导致成本浪费或收入损失。
+                本项目分析 2020 年 4 月 3 日至 2026 年 6 月 1 日这 60 天的使用数据，
+                以推荐 FPT 应维持的最优 DRM 密钥数量，从而最大化成本效率与收入。
             </p>
         </div>
     </section>
@@ -112,57 +115,119 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
         style="padding-top: 40px;" style="padding-bottom: 40px;">
         <div class="container mx-auto text-center">
-            <a href="linkcode/Movie Recommendations.ipynb"
+            <a href="https://github.com/VuthilinhVn/fpt-drm-key-optimization"
                 target="_blank"
                 style="display: inline-block; background-color: #333; color: white; font-weight: bold; padding: 20px 30px; text-align: center; text-decoration: none; border-radius: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-size: 1.25em;">
-                Xem Mã Trên GitHub
+                在 GitHub 上查看代码
             </a>
+        </div>
+    </section>
+
+    <!--Highlights-->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
+        style="padding-top: 40px;" style="padding-bottom: 40px;">
+        <div class="container mx-auto text-left py-10">
+            <h3 class="text-3xl font-bold text-white mb-6">核心亮点：</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-10">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
+                    <p class="text-gray-700 text-1xl mb-3">当前持有密钥</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">334,000</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
+                    <p class="text-gray-700 text-1xl mb-3">历史峰值日</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">14,133</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
+                    <p class="text-gray-700 text-1xl mb-3">峰值日利用率</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">4.23%</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Method -->
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
         <div class="container mx-auto text-left py-10">
-            <h3 class="text-3xl font-bold text-white">Phương pháp:</h3>
-            <p class="text-gray-200 mt-4">
-                Chúng tôi sẽ bắt đầu bằng cách nhập các thư viện cần thiết, pandas, numpy và seaborn. Cùng với đó, chúng tôi sẽ nhập cơ sở dữ liệu cho ngành công nghiệp phim (ở định dạng csv). Chúng tôi sẽ gán biến "df" để dễ dàng tham chiếu sau này.
-                </br>
-                </br>
-                Chúng tôi sẽ đọc dữ liệu bằng thư viện Pandas, tìm kiếm dữ liệu bị thiếu và các giá trị null mà chúng tôi có thể tìm thấy. Sau đó, chúng tôi sẽ làm sạch dữ liệu và bắt đầu tìm kiếm mối tương quan giữa các bộ phim bom tấn và ngân sách mà chúng được cấp.
+            <h3 class="text-4xl font-bold text-white">方法：</h3>
+            <p class="text-white mt-4" style="color: #0f172a; font-weight: 600;">
+                我们首先将 csv 数据文件导入数据库。
             </p>
-        </div>
-    </section>
 
-    <!-- Study Section -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white">Nghiên cứu:</h3>
-            <!-- Images Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <!-- Image 1 -->
-                <div class="relative">
-                    <img src="../../assets/img/movie/daniele-colucci-Smeer5L0tXM-unsplash.jpg" alt="Ảnh 1" onclick="openLightbox(this.src);"
-                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+            <h4 class="text-3xl font-bold mb-8" style="color: #bec3cb;">
+                阶段 1 — 数据理解与验证
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">唯一设备数</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">2,606,314</p>
                 </div>
-                <!-- Image 2 -->
-                <div class="relative">
-                    <img src="../../assets/img/movie/daniele-colucci-Smeer5L0tXM-unsplash.jpg" alt="Ảnh 2" onclick="openLightbox(this.src);"
-                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">客户总数</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">2,772,337</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">每位客户平均设备数</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">1.063</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">DRM 内容占比</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">22.93%</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">时间范围</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">Apr 3 - Jun 1, 2020</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">空值数量</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">0</p>
                 </div>
             </div>
+
+            <h4 class="text-3xl font-bold mb-8" style="color: #bec3cb;">
+                阶段 2 — 描述性分析
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">日均密钥数</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">11,173.816</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">最小值</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">9,032</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">最大值</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">14,133</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">标准差</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">1,307</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">工作日</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">10,710</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">周末</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">12,256</p>
+                </div>
+            </div>
+
+            <h4 class="text-3xl font-bold mb-8" style="color: #bec3cb;">
+                阶段 3 — 统计阈值设定
+            </h4>
+        </div>
     </section>
 
     <!-- Conclusion Section -->
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
         <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white">Kết luận:</h3>
-            <!-- Conclusion Text -->
+            <h3 class="text-3xl font-bold text-white">结论：</h3>
             <div class="mt-8 text-white">
-                <p>Để kết luận, có một mối quan hệ tích cực giữa ngân sách mà các công ty có được với thành công của các bộ phim bom tấn. Chúng tôi đã chứng minh điều này theo năm phát hành cùng với lượt bình chọn và xếp hạng.</p>
+                <p>如需查看更深入的分析，请访问 GitHub 代码仓库。</p>
                 </br>
-                <p>Từ quan điểm cá nhân, có thể nói rằng càng nhiều tiền được đầu tư vào một bộ phim (CGI, chiến dịch tiếp thị, tour báo chí, casting, nhà biên kịch và quảng cáo) thì cơ hội cao hơn cho một bộ phim thành công ở phòng vé. Đặc biệt là vì xu hướng ngày nay của việc thành công ở phòng vé có liên quan cao đến công ty tạo ra bộ phim cũng như quy mô của bộ phim đó.</p>
                 </br>
-                <p>-Alfredo S.</p>
+                <p>MIA VU</p>
             </div>
         </div>
     </section>
@@ -172,8 +237,8 @@
         <div class="container mx-auto">
             <div class="grid grid-cols-2 gap-12">
                 <div>
-                    <h2 class="text-white text-4xl font-semibold mb-8">Liên hệ với tôi</h2>
-                    <p class="text-white text-lg font-light mb-4">Thượng Hải, Trung Quốc 200000</p>
+                    <h2 class="text-white text-4xl font-semibold mb-8">联系我</h2>
+                    <p class="text-white text-lg font-light mb-4">中国上海 200000</p>
                     <a href="mailto:vulinhtnut@gmail.com"
                         class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
                         vulinhtnut@gmail.com</a>

@@ -13,7 +13,7 @@
     <meta property="og:site_name" content="Site name" />
     <meta property="og:image" content="logo" />
 
-    <title>Movie Recommendations</title>
+    <title>Analysis and Recommendation for FPT DRM Key Budget</title>
 
     <!-- Watch css, run "npm run watch" to watch the class change -->
     <link rel="stylesheet" href="../../assets/base/tailwindcss/output.css" />
@@ -90,7 +90,7 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
         style="padding-top: 20px;">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white">Movie Recommendations Project</h2>
+            <h2 class="text-4xl font-bold text-white">Analysis and Recommendation for FPT DRM Key Budget</h2>
         </div>
     </section>
 
@@ -98,7 +98,7 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
         style="padding-bottom: 300px;">
         <div class="container mx-auto text-center" style="display: flex; justify-content: center;">
-            <img src="../../assets/img/Projects/daniele-colucci-Smeer5L0tXM-unsplash.jpg" alt="Header Image" style="max-width: 60%; height: 40%;"
+            <img src="../../assets/img/Projects/FPT.png" alt="Header Image" style="max-width: 60%; height: 40%;"
                 class="rounded-lg shadow-xl">
         </div>
     </section>
@@ -110,9 +110,7 @@
             style="padding: 10px; border: 2px solid #FFFFFF; border-radius: 15px;">
             <h3 class="text-3xl font-bold text-white">Objective:</h3>
             <p class="text-gray-200 mt-4">
-                After recent blockbusters like Spider-Man No Way Home, No Time to Die or Uncharted I wondered what would
-                be the correlation between a movie’s budget and its success. To do this we will apply correlation models
-                through Python in Jupyter Notebooks.
+                FPT currently owns approximately 380,000 DRM keys for various content packages including SVOD, TVOD, AVOD, K+, and Special. However, this number may not align with actual demand, leading to either wasted costs or lost revenue. This project analyzes usage data over a 60-day period from April 3, 2020, to June 1, 2026, to recommend the optimal number of DRM keys FPT should maintain to maximize cost efficiency and revenue.
             </p>
         </div>
     </section>
@@ -122,11 +120,33 @@
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
         style="padding-top: 40px;" style="padding-bottom: 40px;">
         <div class="container mx-auto text-center">
-            <a href="linkcode/Movie Recommendations.ipynb"
+            <a href="https://github.com/VuthilinhVn/fpt-drm-key-optimization"
                 target="_blank"
                 style="display: inline-block; background-color: #333; color: white; font-weight: bold; padding: 20px 30px; text-align: center; text-decoration: none; border-radius: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-size: 1.25em;">
-                View the Code on GitHub
+                View on GitHub
             </a>
+        </div>
+    </section>
+
+    <!--Highlights-->
+    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
+        style="padding-top: 40px;" style="padding-bottom: 40px;">
+        <div class="container mx-auto text-left py-10">
+            <h3 class="text-3xl font-bold text-white mb-6">Highlights:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-10">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
+                    <p class="text-gray-700 text-1xl mb-3">Keys Currently Held</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">334,000</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
+                    <p class="text-gray-700 text-1xl mb-3">Peak Day Ever Observed</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">14,133</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
+                    <p class="text-gray-700 text-1xl mb-3">Utilization on Peak Day</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">4.23%</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -134,40 +154,78 @@
     <!-- Method -->
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000">
         <div class="container mx-auto text-left py-10">
-            <h3 class="text-3xl font-bold text-white">Methodology:</h3>
-            <p class="text-gray-200 mt-4">
-                We will start by importing the necessary libraries, pandas, numpy and seaborn. Along with that we will
-                import the database for the movie industry (Which is on a csv format). We will assign the variable “df”
-                to it to make it easier to reference later.
-                </br>
-                </br>
-                We will read the data by using the Pandas library, look for missing data and null values that we might
-                find. After that we will cleanse the data and start looking for correlations between blockbuster movies
-                and the budgets they were given.
+            <h3 class="text-4xl font-bold text-white">Methodology:</h3>
+            <p class="text-white mt-4" style="color: #0f172a; font-weight: 600;">
+                We will start by importing the data csv files into the Database.
             </p>
+
+            <h4 class="text-3xl font-bold mb-8" style="color: #bec3cb;">
+                Phase 1 — Data Understanding & Validation
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Unique Devices</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">2,606,314</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Total Customers</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">2,772,337</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Average Devices per Customer</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">1.063</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">DRM Content Share</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">22.93%</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Date Range</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">Apr 3 - Jun 1, 2020</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Null Values</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">0</p>
+                </div>
+            </div>
+
+            <h4 class="text-3xl font-bold mb-8" style="color: #bec3cb;">
+                Phase 2 — Descriptive Analytics
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Average daily keys</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">11,173.816</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Minimum</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">9,032</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Maximum</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">14,133</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Std Deviation</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">1,307</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Weekday</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">10,710</p>
+                </div>
+                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white-200 shadow-2xl">
+                    <p class="text-white text-1xl mb-3">Weekend</p>
+                    <p class="text-1xl font-bold" style="color: #0ea5e9;">12,256</p>
+                </div>
+            </div>
+
+            <h4 class="text-3xl font-bold mb-8" style="color: #bec3cb;">
+                Phase 3 — Statistical Thresholding
+            </h4>
         </div>
     </section>
 
 
-    <!-- Study Section with Images -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white">Study:</h3>
-            <!-- Images Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <!-- Image 1 -->
-                <div class="relative">
-                    <img src="../../assets/img/movie/daniele-colucci-Smeer5L0tXM-unsplash.jpg" alt="Image 1" onclick="openLightbox(this.src);"
-                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
-                </div>
-                <!-- Image 2 -->
-                <div class="relative">
-                    <img src="../../assets/img/movie/daniele-colucci-Smeer5L0tXM-unsplash.jpg" alt="Image 2" onclick="openLightbox(this.src);"
-                        class="rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
-                </div>
-
-            </div>
-    </section>
 
     <!-- Conclusion Section -->
     <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
@@ -175,19 +233,11 @@
             <h3 class="text-3xl font-bold text-white">Conclusion:</h3>
             <!-- Conclusion Text -->
             <div class="mt-8 text-white">
-                <p>As a conclusion, yes there is a positive relationship between the budget that companies have with
-                    the success of blockbuster movies. We’ve proven this by year of release along with votes and
-                    rankings.
+                <p>
                     For a more in-depth explanation of the correlation visit the code on my GitHub.</p>
                 </br>
-                <p>From a personal perspective, it's safe to say that the more money is invested in a movie (CGI,
-                    marketing campaigns, press tours, castings, writers, and advertisement) the higher are the chances
-                    for a movie to succeed in the box office. Especially since today’s trends of succeeding at the box
-                    office are highly correlated to the company making the movie along with the scale of the movie
-                    itself (Spider-Man NWH generated hype the minute it was announced, and so did Avatar, James Bond,
-                    Star Wars, and so on…).</p>
                 </br>
-                <p>-Alfredo S.</p>
+                <p>MIA VU</p>
             </div>
         </div>
     </section>
