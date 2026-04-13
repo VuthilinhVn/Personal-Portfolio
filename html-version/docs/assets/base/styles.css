@@ -54,6 +54,15 @@
   text-align: center;
 }
 
+/* Chinese subtitle reads better without italic and wide tracking. */
+html[lang="zh"] #homeSection .titles {
+  display: block;
+  width: 100%;
+  font-style: normal;
+  letter-spacing: 0.1px;
+  line-height: 1.6;
+}
+
 /* Base styling for buttons */
 .btn {
   padding: 18px 36px;
