@@ -147,61 +147,57 @@ function initializeLanguageSwitcher() {
     style.textContent = `
     .language-switcher-container {
       position: fixed;
-      top: 20px;
+      top: 12px;
       right: 20px;
-      z-index: 1000;
+      z-index: 1001; /* above the sticky navbar (z-40) */
     }
 
     .language-dropdown {
-      padding: 10px 15px;
-      border: 2px solid #3b82f6;
-      background: white;
-      border-radius: 8px;
+      padding: 6px 32px 6px 12px;
+      border: 1px solid #FCA311;
+      background: transparent;
+      border-radius: 6px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 14px;
-      color: #333;
-      transition: all 0.3s ease;
+      font-size: 13px;
+      color: #FFFFFF;
+      transition: all 0.25s ease;
       font-family: 'Poppins', sans-serif;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
       appearance: none;
-      padding-right: 30px;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FCA311' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
       background-repeat: no-repeat;
       background-position: right 8px center;
-      background-size: 20px;
-      padding-right: 35px;
+      background-size: 16px;
     }
 
     .language-dropdown:hover {
-      background-color: #f3f4f6;
-      border-color: #1e40af;
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      background-color: rgba(252, 163, 17, 0.15);
+      border-color: #FCA311;
     }
 
     .language-dropdown:focus {
       outline: none;
-      border-color: #1e40af;
-      background-color: white;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      border-color: #FCA311;
+      box-shadow: 0 0 0 2px rgba(252, 163, 17, 0.25);
     }
 
     .language-dropdown option {
-      padding: 10px;
-      background: white;
-      color: #333;
+      padding: 8px;
+      background: #14213D;
+      color: #FFFFFF;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1023px) {
+      /* On mobile, navbar is taller (p-6) and the hamburger sits at the right — drop the
+         switcher below the navbar so it doesn't collide with the menu button */
       .language-switcher-container {
         top: 80px;
         right: 10px;
       }
-
       .language-dropdown {
-        padding: 8px 12px;
+        padding: 5px 28px 5px 10px;
         font-size: 12px;
-        padding-right: 30px;
       }
     }
 
@@ -210,11 +206,9 @@ function initializeLanguageSwitcher() {
         top: 70px;
         right: 5px;
       }
-
       .language-dropdown {
-        padding: 6px 10px;
+        padding: 4px 24px 4px 8px;
         font-size: 11px;
-        padding-right: 25px;
       }
     }
   `;

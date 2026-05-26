@@ -266,7 +266,12 @@ body {
 #skills-carousel h2 {
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 0;
   font-weight: 600;
+  font-size: 1.5rem; /* ~24px — override the global h2 (26px) and tighten its margins */
+  text-shadow: none;
+  color: #14213D;
+  letter-spacing: 0.5px;
 }
 
 .drag-notify {
@@ -383,83 +388,407 @@ body {
 }
 
 .project-section {
-  background-color: #14213D; /* Dark gray background for cards */
-  border: 2px solid #ffffff; /* White border around the entire card */
-  color: #fff; /* White text for contrast */
-  margin: 30px auto; /* Centers the card with automatic horizontal margins */
-  padding: 20px; /* Padding inside the cards */
-  text-align: center; /* Centers text within the card */
-  border-radius: 15px; /* Rounded corners for the card */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: transform 0.3s ease; /* Smooth transformation on hover */
-  width: 100%; /* Card width relative to the parent container (full width) */
-  max-width: 800px; /* Significantly increased maximum width of the cards */
+  background: linear-gradient(155deg, #0A1428 0%, #1a2c4e 100%); /* Subtle gradient for depth */
+  border: 1px solid rgba(252, 163, 17, 0.25); /* Soft orange accent border */
+  color: #fff;
+  margin: 30px auto;
+  padding: 0; /* Remove inner padding — card image goes edge-to-edge */
+  text-align: left;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden; /* Clip the image to the rounded corners */
+  display: flex;
+  flex-direction: column;
 }
 
 .project-section:hover {
-  transform: translateY(-5px); /* Lifts the card up slightly on hover */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for depth */
+  transform: translateY(-6px);
+  border-color: #FCA311; /* Orange accent on hover */
+  box-shadow: 0 12px 28px rgba(252, 163, 17, 0.18), 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* The inner anchor + card become a transparent wrapper — the section IS the card */
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
 }
 
 .project-card {
-  background: linear-gradient(145deg, #14213D, #14213D); /* Uniform background */
-  border-radius: 10px; /* Rounded corners for the card */
-  overflow: hidden; /* Ensures content does not spill outside the border-radius */
-  margin-bottom: 20px; /* Space after each card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for the card */
-  width: 100%; /* Card width relative to the parent container (full width) */
-  max-width: 800px; /* Significantly increased maximum width of the cards */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow for more depth */
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+  transition: none;
+  width: 100%;
+  max-width: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card img {
-  width: 100%; /* Image takes full width of the card */
-  height: 400px; /* Significantly increased fixed height for the images */
-  object-fit: cover; /* Ensure the image covers the area without stretching */
-  display: block; /* Ensures image takes up a whole 'block', no inline elements next to it */
-  border-radius: 10px 10px 0 0; /* Rounded corners at the top of the image */
-  border: 4px solid #ffffff; /* Slightly thicker white border around the image */
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(252, 163, 17, 0.25); /* Subtle separator */
+  transition: transform 0.4s ease;
 }
 
-.project-info {
-  padding: 30px; /* Increased padding for more space around the text */
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background for the text area */
-  border-top: 4px solid transparent; /* No border above the project info */
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+.project-section:hover .project-card img {
+  transform: scale(1.04); /* Gentle zoom on hover */
 }
 
-.project-info h3 {
-  margin: 0; /* No margin for the title to stick to the top */
-  color: #fff; /* White text color for the title */
-  font-size: 300px; /* Further increased font size for the title */
-  text-decoration: none; /* Remove text underline or highlight */
-  line-height: 1.2; /* Adjust the line height for better readability */
+.project-card > h3,
+.project-card .project-info h3 {
+  margin: 18px 22px 0;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
 }
 
-.project-info p {
-  color: #dee2e6; /* Light gray for the project description text */
-  font-size: 60px; /* Further increased font size for the description */
-  line-height: 1.4; /* Adjust the line height for better readability */
-  margin-top: 10px; /* Add some space between the title and description */
+.project-card > p,
+.project-card .project-info p {
+  color: rgba(229, 229, 229, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 12px 22px 16px;
+  font-family: 'Open Sans', sans-serif;
+  /* Truncate to 3 lines with ellipsis so all cards keep a consistent height */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Push skill bubbles to the bottom of the card so they align across rows */
+.project-card .skills {
+  margin-top: auto;
 }
 
 .project-card:hover {
-  background-color: #1c4d6e; /* Slightly darker shade on hover */
+  background-color: transparent;
 }
 
-.project-card:hover .project-info h3, .project-card:hover .project-info p {
-  color: #e6e6e6; /* Lighter color on hover for text */
+.skills {
+  margin: 0 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .skill-bubble {
   display: inline-block;
-  margin: 5px;
-  padding: 5px 10px;
-  border-radius: 15px;
-  background-color: #f0f0f0;
-  color: #333;
-  font-size: 1.2em;
+  margin: 4px 6px 4px 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: rgba(252, 163, 17, 0.15);
+  color: #FCA311;
+  border: 1px solid rgba(252, 163, 17, 0.45);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* ============================================================
+   LIGHT BEIGE THEME — overrides on top of Tailwind utilities.
+   Goal: cream background, navy text, orange accent. Keeps the
+   footer dark navy as a closing anchor.
+   ============================================================ */
+:root {
+  --cream-bg: #FAF7F2;
+  --cream-panel: #FFFFFF;
+  --text-navy: #14213D;
+  --text-muted: rgba(20, 33, 61, 0.72);
+  --text-soft: rgba(20, 33, 61, 0.55);
+  --accent-orange: #FCA311;
+  --border-soft: rgba(20, 33, 61, 0.12);
+  --shadow-soft: 0 2px 12px rgba(20, 33, 61, 0.08);
+  --shadow-strong: 0 8px 28px rgba(20, 33, 61, 0.14);
+}
+
+/* Body & default text */
+body {
+  background-color: var(--cream-bg) !important;
+  color: var(--text-navy);
+}
+
+.bg-primary {
+  background-color: var(--cream-bg) !important;
+}
+
+.text-primary {
+  color: var(--text-navy) !important;
+}
+
+/* Navbar — navy to bookend with the footer */
+#nav {
+  background-color: var(--text-navy) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(20, 33, 61, 0.18);
+}
+
+#nav a {
+  color: #FFFFFF !important;
+  font-size: 1.15rem !important; /* bump up from Tailwind lg:text-base (16px) */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#nav a:hover {
+  color: var(--accent-orange) !important;
+}
+
+#nav .border-primary { border-color: #FFFFFF !important; }
+#nav .fill-primary  { fill: #FFFFFF !important; }
+
+/* Global heading shadow was a white glow — invisible on cream */
+h2, h3, h4 { text-shadow: none !important; }
+
+/* Home hero section */
+#homeSection,
+#homeSection .greeting {
+  color: var(--text-navy);
+  text-shadow: none;
+}
+
+#homeSection .titles {
+  color: var(--text-muted);
+}
+
+/* === Project page wide gradient panels → flat on cream background === */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 {
+  background: transparent !important;
+  background-image: none !important;
+  padding: 24px 48px !important; /* horizontal breathing room + overrides ugly inline padding */
+  margin: 0 auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  max-width: 1100px;
+}
+
+/* First gradient section: top spacing */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600:first-of-type {
+  margin-top: 24px !important;
+  padding-top: 32px !important;
+}
+
+/* Last gradient section (right before the dark footer): bottom spacing */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600:has(+ .footer-section) {
+  margin-bottom: 32px !important;
+  padding-bottom: 40px !important;
+}
+
+/* Inner container — reset Tailwind's `container` max-width so it fills the panel */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 > .container {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Tighten the embedded iframe padding-top hack so it doesn't add extra space */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 > .container > div[style*="padding-top"] {
+  margin-top: 8px;
+}
+
+section.bg-gradient-to-r.from-navy-500.to-indigo-600,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 h2,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 h3,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 h4,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 p,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 li,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 ul,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 b,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 strong,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 em,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 .text-white {
+  color: var(--text-navy) !important;
+}
+
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 .text-gray-200,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 .text-gray-300 {
+  color: var(--text-muted) !important;
+}
+
+/* Objective panel has inline `border: 2px solid #FFFFFF` + `padding: 10px` (too tight) */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 > .container[style*="border"] {
+  border-color: rgba(252, 163, 17, 0.4) !important;
+  background: rgba(252, 163, 17, 0.06);
+  padding: 24px 28px !important;
+  border-radius: 12px !important;
+  border-width: 1px !important;
+}
+
+/* Highlights mini-cards inside project pages */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 .bg-white,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 [class*="bg-white"] {
+  background-color: var(--cream-panel) !important;
+  border-color: rgba(252, 163, 17, 0.5) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 .bg-white .text-gray-700,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 .bg-white .text-white,
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 [class*="bg-white"] .text-white {
+  color: var(--text-navy) !important;
+}
+
+/* Dark "Download" / "View on GitHub" buttons */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 a[style*="background-color: #333"] {
+  background-color: var(--text-navy) !important;
+}
+
+/* Phase sub-headings (#bec3cb gray) — too pale on cream */
+section.bg-gradient-to-r.from-navy-500.to-indigo-600 h4[style*="bec3cb"] {
+  color: var(--text-soft) !important;
+}
+
+/* === Home: About Me section (uses .bg-blue) === */
+.bg-blue {
+  background-color: var(--cream-panel) !important;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.bg-blue h2,
+.bg-blue p,
+.bg-blue .text-white {
+  color: var(--text-navy) !important;
+}
+
+/* === Home: Recent Projects carousel — light panel === */
+.carousel-section {
+  background: var(--cream-panel) !important;
+  background-image: none !important;
+  color: var(--text-navy) !important;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  margin: 30px auto;
+  max-width: 1280px;
+}
+
+.carousel-section h2,
+.carousel-section h3,
+.carousel-section p,
+.carousel-section .text-white {
+  color: var(--text-navy) !important;
+}
+
+.carousel-nav {
+  background-color: rgba(20, 33, 61, 0.55) !important;
+  color: #FFFFFF !important;
+}
+
+.carousel-nav:hover {
+  background-color: var(--text-navy) !important;
+}
+
+.dot { background-color: rgba(20, 33, 61, 0.25); }
+.dot.active { background-color: var(--accent-orange); }
+
+/* === Portfolio cards — repaint dark gradient → white === */
+.project-section {
+  background: var(--cream-panel) !important;
+  border: 1px solid var(--border-soft) !important;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-section:hover {
+  border-color: var(--accent-orange) !important;
+  box-shadow: var(--shadow-strong);
+}
+
+.project-card > h3,
+.project-card .project-info h3 {
+  color: var(--text-navy) !important;
+  text-shadow: none;
+}
+
+.project-card > p,
+.project-card .project-info p {
+  color: var(--text-muted) !important;
+}
+
+.project-card img {
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* === Home: View All Projects CTA (replaces old carousel) === */
+.projects-cta {
+  max-width: 760px;
+  margin: 60px auto 40px;
+  padding: 48px 32px;
+  text-align: center;
+  background: transparent;
+}
+
+.projects-cta h2 {
+  color: var(--text-navy);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 16px;
+  text-shadow: none;
+}
+
+.projects-cta p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(252, 163, 17, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.cta-button:hover {
+  background-color: #e89200;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(252, 163, 17, 0.45);
+  color: #FFFFFF;
+}
+
+
+/* === Footer — keep dark navy as a closing anchor === */
+.footer-section.bg-dark-gray,
+.bg-dark-gray {
+  background-color: var(--text-navy) !important;
+}
+
+.footer-section h2,
+.footer-section p,
+.footer-section .text-white {
+  color: #FFFFFF !important;
 }
 
 .skills {
