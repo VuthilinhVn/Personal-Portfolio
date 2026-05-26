@@ -348,6 +348,40 @@ body {
   color: #fff; /* White text for body */
 }
 
+/* 3-column responsive grid for the portfolio listing */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.project-grid .project-section {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.project-grid .project-card {
+  max-width: none;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.project-grid .project-card img {
+  height: 220px;
+}
+
+@media (max-width: 1024px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
+
 .project-section {
   background-color: #14213D; /* Dark gray background for cards */
   border: 2px solid #ffffff; /* White border around the entire card */
