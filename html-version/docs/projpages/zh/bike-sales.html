@@ -1,250 +1,437 @@
 <!DOCTYPE html>
 <html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="使用 Excel 构建的自行车销售交互式仪表板 — 基于 1,000 位购车客户的人口统计、收入与购买行为分析。"
+        />
+        <meta
+            name="keywords"
+            content="Excel, 仪表板, Power Query, 数据透视表, 自行车销售, 数据分析"
+        />
+        <meta name="author" content="VU THI LINH" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="使用 Excel 构建的自行车销售交互式仪表板 — 基于 1,000 位购车客户的人口统计、收入与购买行为分析。" />
-    <meta name="keywords" content="Excel, 仪表板, Power Query, 数据透视表, 自行车销售, 数据分析" />
-    <meta name="author" content="VU THI LINH" />
+        <meta
+            property="og:description"
+            content="使用 Excel 构建的自行车销售交互式仪表板"
+        />
+        <meta
+            property="og:url"
+            content="https://vuthilinhvn.github.io/Personal-Portfolio/"
+        />
+        <meta property="og:site_name" content="作品集" />
+        <meta property="og:image" content="logo" />
 
-    <meta property="og:description" content="使用 Excel 构建的自行车销售交互式仪表板" />
-    <meta property="og:url" content="https://vuthilinhvn.github.io/Personal-Portfolio/" />
-    <meta property="og:site_name" content="作品集" />
-    <meta property="og:image" content="logo" />
+        <title>自行车销售仪表板</title>
 
-    <title>自行车销售仪表板</title>
+        <link
+            rel="stylesheet"
+            href="../../assets/base/tailwindcss/output.css"
+        />
+        <link
+            href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../../assets/base/styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
 
-    <link rel="stylesheet" href="../../assets/base/tailwindcss/output.css" />
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/base/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    </head>
 
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-</head>
-
-<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
-    <!-- Navbar -->
-    <nav id="nav"
-        class="translate-y-auto sticky top-0 z-40 h-max w-full flex justify-center bg-primary p-6 transition duration-500 lg:p-4">
-        <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
-            <a href="../../../../index.html" class="text-xl hover:text-secondary lg:text-base">
-                首页
-            </a>
-            <a href="../../portfolio/zh/portfolio.html" class="text-xl hover:text-secondary lg:text-base">
-                作品集
-            </a>
-        </div>
-
-        <div class="z-50 flex-none">
-            <div class="flex justify-end lg:hidden">
-                <button id="navButton"
-                    class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
-                    <svg class="navMenuIcon block w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
-                    </svg>
-                    <svg class="navMenuIcon hidden w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z" />
-                    </svg>
-                </button>
+    <body
+        class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary"
+    >
+        <!-- Navbar -->
+        <nav
+            id="nav"
+            class="translate-y-auto sticky top-0 z-40 flex h-max w-full justify-center bg-primary p-6 transition duration-500 lg:p-4"
+        >
+            <div
+                class="nav-links flex hidden items-center justify-center space-x-20 text-primary lg:flex"
+            >
+                <a
+                    href="../../../../index.html"
+                    class="text-xl hover:text-secondary lg:text-base"
+                >
+                    首页
+                </a>
+                <a
+                    href="../../portfolio/zh/portfolio.html"
+                    class="text-xl hover:text-secondary lg:text-base"
+                >
+                    作品集
+                </a>
             </div>
-        </div>
-    </nav>
 
-
-    <!-- Title -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
-        style="padding-top: 20px;">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white">自行车销售仪表板</h2>
-        </div>
-    </section>
-
-
-    <!-- Objective -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
-        style="padding-top: 40px;">
-        <div class="container mx-auto text-left py-10"
-            style="padding: 20px; border: 2px solid #FFFFFF; border-radius: 15px;">
-            <h3 class="text-3xl font-bold text-white">目标：</h3>
-            <p class="text-gray-200 mt-4">
-                本项目分析 1,000 位自行车购买者的购买行为，找出对购买决定影响最大的人口统计因素 ——
-                性别、年龄、收入、婚姻状况、地区和通勤距离。最终交付物是一个带切片器、数据透视图和数据透视表的
-                完全交互式 Excel 仪表板，观看者可以自行筛选并探索数据。
-            </p>
-        </div>
-    </section>
-
-
-    <!-- Download Button -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
-        style="padding-top: 40px; padding-bottom: 20px;">
-        <div class="container mx-auto text-center">
-            <a href="../../../../Excel-Project/Bike-Sales.xlsx"
-                download
-                style="display: inline-block; background-color: #333; color: white; font-weight: bold; padding: 20px 30px; text-align: center; text-decoration: none; border-radius: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-size: 1.25em;">
-                下载 Excel 文件
-            </a>
-        </div>
-    </section>
-
-
-    <!-- Highlights -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
-        style="padding-top: 40px; padding-bottom: 20px;">
-        <div class="container mx-auto text-left py-10">
-            <h3 class="text-3xl font-bold text-white mb-6">数据概览：</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-10">
-                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
-                    <p class="text-gray-700 text-1xl mb-3">客户记录数</p>
-                    <p class="text-1xl font-bold" style="color: #0ea5e9;">1,000</p>
-                </div>
-                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
-                    <p class="text-gray-700 text-1xl mb-3">分析属性数</p>
-                    <p class="text-1xl font-bold" style="color: #0ea5e9;">13</p>
-                </div>
-                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
-                    <p class="text-gray-700 text-1xl mb-3">覆盖地区</p>
-                    <p class="text-1xl font-bold" style="color: #0ea5e9;">Europe / Pacific / North America</p>
+            <div class="z-50 flex-none">
+                <div class="flex justify-end lg:hidden">
+                    <button
+                        id="navButton"
+                        class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary"
+                    >
+                        <svg
+                            class="navMenuIcon block w-8 fill-primary"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z"
+                            />
+                        </svg>
+                        <svg
+                            class="navMenuIcon hidden w-8 fill-primary"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z"
+                            />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-
-    <!-- Methodology -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-right" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-4xl font-bold text-white">方法：</h3>
-
-            <h4 class="text-3xl font-bold mb-4 mt-8" style="color: #bec3cb;">
-                第 1 阶段 —— 数据清洗 (Power Query)
-            </h4>
-            <div class="text-white mt-4">
-                <ul class="list-disc pl-5 text-gray-200">
-                    <li>移除原始 <em>bike_buyers</em> 工作表中的重复 ID。</li>
-                    <li>标准化 <em>Marital Status</em> (M / S &rarr; Married / Single) 和 <em>Gender</em> (M / F &rarr; Male / Female)。</li>
-                    <li>替换数值列中的空值，并重新定义 Income / Age / Cars / Children 的数据类型。</li>
-                    <li>新增 <em>Age Brackets</em> 列 (Adolescent 12-35, Adult 35-59, Old &gt;60) 以便按年龄群分析。</li>
-                </ul>
+        <!-- Title -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            style="padding-top: 20px"
+        >
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-white">
+                    自行车销售Dashboard
+                </h2>
             </div>
-
-            <h4 class="text-3xl font-bold mb-4 mt-8" style="color: #bec3cb;">
-                第 2 阶段 —— 数据透视表
-            </h4>
-            <div class="text-white mt-4">
-                <p>在清洗后的 <em>working sheet</em> 上构建了三张数据透视表：</p>
-                <ul class="list-disc pl-5 text-gray-200 mt-2">
-                    <li><b>平均收入 × 性别 × 是否购买</b> —— 检验高收入客户是否更倾向购车。</li>
-                    <li><b>年龄段 × 是否购买</b> —— 找出购买量最高的年龄群。</li>
-                    <li><b>通勤距离 × 是否购买</b> —— 检验通勤距离是否为购买的预测因子。</li>
-                </ul>
+        </section>
+        <!-- Header Image -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            style="padding-bottom: 300px"
+        >
+            <div
+                class="container mx-auto text-center"
+                style="display: flex; justify-content: center"
+            >
+                <img
+                    src="../../assets/img/Projects/bike-sales.png"
+                    alt="Header Image"
+                    style="max-width: 60%; height: 40%"
+                    class="rounded-lg shadow-xl"
+                />
             </div>
+        </section>
 
-            <h4 class="text-3xl font-bold mb-4 mt-8" style="color: #bec3cb;">
-                第 3 阶段 —— 交互式仪表板
-            </h4>
-            <div class="text-white mt-4">
-                <p>数据透视表被转换为数据透视图（收入为柱形图，年龄段和通勤距离为折线图）。在仪表板顶部添加了
-                    <em>Marital Status</em>、<em>Region</em> 和 <em>Education</em> 切片器，可同时筛选所有图表。
-                    最终是一个单页式仪表板，能实时响应操作 —— 与在 Excel 中打开文件的体验完全相同。</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Interactive Embed -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white mb-6">交互式仪表板：</h3>
-            <p class="text-gray-200 mb-6">
-                下方嵌入的工作簿就是真实文件。点击底部的工作表标签可在
-                <b>bike_buyers</b>（原始数据）、<b>working sheet</b>（清洗后数据）、<b>pivot table</b> 和
-                <b>dashboard</b> 之间切换。在 <b>dashboard</b> 标签中使用切片器即可筛选图表。
-            </p>
-
-            <div style="position: relative; width: 100%; padding-top: 70%; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
-                <iframe
-                    src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fvuthilinhvn.github.io%2FPersonal-Portfolio%2FExcel-Project%2FBike-Sales.xlsx"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="text-gray-300 text-sm mt-4 italic">
-                注：嵌入内容从本站点的公开 GitHub Pages URL 加载。如果您在部署之前在本地 (file://) 预览此页面，
-                Office Viewer 将为空白 —— 请使用上方的下载按钮，用 Excel 打开查看。
-            </p>
-        </div>
-    </section>
-
-
-    <!-- Conclusion -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white">结论：</h3>
-            <div class="mt-8 text-white">
-                <p>
-                    仪表板显示，自行车购买集中在 <b>Adolescent 12-35</b> 和 <b>Adult 35-59</b> 这两个年龄段，
-                    购买者的平均收入高于未购买者，且通勤距离较短 (0-5 英里) 的客户购车意愿明显更高。
-                    如果这是一个真实的营销活动，这些洞察可以用来指导营销预算的投放方向。
+        <!-- Objective -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            style="padding-top: 40px"
+        >
+            <div
+                class="container mx-auto py-10 text-left"
+                style="
+                    padding: 20px;
+                    border: 2px solid #ffffff;
+                    border-radius: 15px;
+                "
+            >
+                <h3 class="text-3xl font-bold text-white">目标：</h3>
+                <p class="mt-4 text-gray-200">
+                    本项目分析 1,000
+                    位自行车购买者的购买行为，找出对购买决定影响最大的人口统计因素:
+                    性别、年龄、收入、婚姻状况、地区和通勤距离。最终交付物是一个带切片器、数据透视图和数据透视表的
+                    完全交互式 Excel 仪表板，观看者可以自行筛选并探索数据。
                 </p>
-                <br/>
-                <p>MIA VU</p>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Download Button -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            style="padding-top: 40px; padding-bottom: 20px"
+        >
+            <div class="container mx-auto text-center">
+                <a
+                    href="../../../../Excel-Project/Bike-Sales.xlsx"
+                    download
+                    style="
+                        display: inline-block;
+                        background-color: #333;
+                        color: white;
+                        font-weight: bold;
+                        padding: 20px 30px;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 0;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        font-size: 1.25em;
+                    "
+                >
+                    下载 Excel 文件
+                </a>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <section class="footer-section bg-dark-gray py-10">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-white text-4xl font-semibold mb-8">联系我</h2>
-                    <p class="text-white text-lg font-light mb-4">中国上海 200000</p>
-                    <p class="text-white text-lg font-light mb-8">中国</p>
-                    <a href="mailto:vulinhtnut@gmail.com"
-                        class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
-                        vulinhtnut@gmail.com</a>
-                </div>
-                <div class="flex justify-end items-start">
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/linh-v%C5%A9-024017335/"
-                        target="_blank" class="mx-3"><img src="../../assets/img/linkedin.png" alt="LinkedIn" width="32"></a>
-                        <a href="https://github.com/VuthilinhVn" target="_blank" class="mx-3"><img
-                                src="../../assets/img/github.png" alt="Github" width="32"></a>
+        <!-- Highlights -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            style="padding-top: 40px; padding-bottom: 20px"
+        >
+            <div class="container mx-auto py-10 text-left">
+                <h3 class="mb-6 text-3xl font-bold text-white">数据概览：</h3>
+                <div class="mb-10 grid grid-cols-1 gap-3 md:grid-cols-3">
+                    <div
+                        class="rounded-2xl border-2 border-cyan-300 bg-white p-8 shadow-2xl"
+                    >
+                        <p class="text-1xl mb-3 text-gray-700">客户记录数</p>
+                        <p class="text-1xl font-bold" style="color: #0ea5e9">
+                            1,000
+                        </p>
+                    </div>
+                    <div
+                        class="rounded-2xl border-2 border-cyan-300 bg-white p-8 shadow-2xl"
+                    >
+                        <p class="text-1xl mb-3 text-gray-700">分析属性数</p>
+                        <p class="text-1xl font-bold" style="color: #0ea5e9">
+                            13
+                        </p>
+                    </div>
+                    <div
+                        class="rounded-2xl border-2 border-cyan-300 bg-white p-8 shadow-2xl"
+                    >
+                        <p class="text-1xl mb-3 text-gray-700">覆盖地区</p>
+                        <p class="text-1xl font-bold" style="color: #0ea5e9">
+                            Europe / Pacific / North America
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Methodology -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600 py-10"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+        >
+            <div class="container mx-auto text-left">
+                <h3 class="text-4xl font-bold text-white">方法：</h3>
 
-</body>
-<script src="../../assets/custom/js/script.js"></script>
-<script src="../../assets/custom/js/language-switcher.js"></script>
+                <h4 class="mb-4 mt-8 text-3xl font-bold" style="color: #bec3cb">
+                    第 1 阶段: 数据清洗
+                </h4>
+                <div class="mt-4 text-white">
+                    <ul class="list-disc pl-5 text-gray-200">
+                        <li>
+                            移除原始 <em>bike_buyers</em> 工作表中的重复 ID值。
+                        </li>
+                        <li>
+                            标准化 <em>Marital Status</em> (M / S &rarr; Married
+                            / Single) 和 <em>Gender</em> (M / F &rarr; Male /
+                            Female)。
+                        </li>
+                        <li>
+                            替换数值列中的空值，并重新定义 Income / Age / Cars /
+                            Children 的数据类型。
+                        </li>
+                        <li>
+                            新增 <em>Age Brackets</em> 列 (Adolescent 12-35,
+                            Adult 35-59, Old &gt;60) 以便按年龄群分析。
+                        </li>
+                    </ul>
+                </div>
 
-<script>
-    document.getElementById("navButton").addEventListener("click", function () {
-        const navLinks = document.querySelector(".nav-links");
-        navLinks.classList.toggle("hidden");
-        const openIcon = document.querySelector(".navMenuIcon.block");
-        const closeIcon = document.querySelector(".navMenuIcon.hidden");
-        openIcon.classList.toggle("hidden");
-        closeIcon.classList.toggle("block");
-    });
-</script>
+                <h4 class="mb-4 mt-8 text-3xl font-bold" style="color: #bec3cb">
+                    第 2 阶段: 数据透视表
+                </h4>
+                <div class="mt-4 text-white">
+                    <p>
+                        在清洗后的
+                        <em>working sheet</em> 上构建了三张数据透视表：
+                    </p>
+                    <ul class="mt-2 list-disc pl-5 text-gray-200">
+                        <li>
+                            <b>平均收入 × 性别 × 是否购买</b> ->
+                            检验高收入客户是否更倾向购车。
+                        </li>
+                        <li>
+                            <b>年龄段 × 是否购买</b> -> 找出购买量最高的年龄群。
+                        </li>
+                        <li>
+                            <b>通勤距离 × 是否购买</b> ->
+                            检验通勤距离是否为购买的预测因子。
+                        </li>
+                    </ul>
+                </div>
 
-<script>
-    AOS.init();
-</script>
+                <h4 class="mb-4 mt-8 text-3xl font-bold" style="color: #bec3cb">
+                    第 3 阶段 —— 交互式仪表板
+                </h4>
+                <div class="mt-4 text-white">
+                    <p>
+                        数据透视表被转换为数据透视图（收入为柱形图，年龄段和通勤距离为折线图）。在仪表板顶部添加了
+                        <em>Marital Status</em>、<em>Region</em> 和
+                        <em>Education</em> 切片器，可同时筛选所有图表。
+                        最终是一个单页式仪表板，能实时响应操作 —— 与在 Excel
+                        中打开文件的体验完全相同。
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Interactive Embed -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600 py-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <div class="container mx-auto text-left">
+                <h3 class="mb-6 text-3xl font-bold text-white">
+                    交互式仪表板：
+                </h3>
+                <p class="mb-6 text-gray-200">
+                    下方嵌入的工作簿就是真实文件。点击底部的工作表标签可在
+                    <b>bike_buyers</b>（原始数据）、<b>working sheet</b
+                    >（清洗后数据）、<b>pivot table</b> 和
+                    <b>dashboard</b> 之间切换。在
+                    <b>dashboard</b> 标签中使用切片器即可筛选图表。
+                </p>
+
+                <div
+                    style="
+                        position: relative;
+                        width: 100%;
+                        padding-top: 70%;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+                    "
+                >
+                    <iframe
+                        src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fvuthilinhvn.github.io%2FPersonal-Portfolio%2FExcel-Project%2FBike-Sales.xlsx"
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                        "
+                        frameborder="0"
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600 py-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <div class="container mx-auto text-left">
+                <h3 class="text-3xl font-bold text-white">结论：</h3>
+                <div class="mt-8 text-white">
+                    <p>
+                        仪表板显示，自行车购买集中在 <b>Adolescent 12-35</b> 和
+                        <b>Adult 35-59</b> 这两个年龄段，
+                        购买者的平均收入高于未购买者，且通勤距离较短 (0-5 英里)
+                        的客户购车意愿明显更高。这些洞察可以用来指导营销预算的投放方向。
+                    </p>
+                    <br />
+                    <p>MIA VU</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer-section bg-dark-gray py-10">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="mb-8 text-4xl font-semibold text-white">
+                            联系我
+                        </h2>
+                        <p class="mb-4 text-lg font-light text-white">
+                            中国上海 200000
+                        </p>
+                        <p class="mb-8 text-lg font-light text-white">中国</p>
+                        <a
+                            href="mailto:vulinhtnut@gmail.com"
+                            class="font-medium text-blue-600 transition duration-300 ease-in-out hover:text-blue-800"
+                        >
+                            vulinhtnut@gmail.com</a
+                        >
+                    </div>
+                    <div class="flex items-start justify-end">
+                        <div class="social-icons">
+                            <a
+                                href="https://www.linkedin.com/in/linh-v%C5%A9-024017335/"
+                                target="_blank"
+                                class="mx-3"
+                                ><img
+                                    src="../../assets/img/linkedin.png"
+                                    alt="LinkedIn"
+                                    width="32"
+                            /></a>
+                            <a
+                                href="https://github.com/VuthilinhVn"
+                                target="_blank"
+                                class="mx-3"
+                                ><img
+                                    src="../../assets/img/github.png"
+                                    alt="Github"
+                                    width="32"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="../../assets/custom/js/script.js"></script>
+    <script src="../../assets/custom/js/language-switcher.js"></script>
+
+    <script>
+        document
+            .getElementById("navButton")
+            .addEventListener("click", function () {
+                const navLinks = document.querySelector(".nav-links");
+                navLinks.classList.toggle("hidden");
+                const openIcon = document.querySelector(".navMenuIcon.block");
+                const closeIcon = document.querySelector(".navMenuIcon.hidden");
+                openIcon.classList.toggle("hidden");
+                closeIcon.classList.toggle("block");
+            });
+    </script>
+
+    <script>
+        AOS.init();
+    </script>
 </html>

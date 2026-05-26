@@ -1,253 +1,455 @@
 <!DOCTYPE html>
 <html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Dashboard Bán Xe Đạp tương tác xây dựng bằng Excel — phân tích 1.000 khách mua xe theo nhân khẩu học, thu nhập và hành vi mua."
+        />
+        <meta
+            name="keywords"
+            content="Excel, Dashboard, Power Query, Pivot Table, Bán Xe Đạp, Phân tích dữ liệu"
+        />
+        <meta name="author" content="VU THI LINH" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Dashboard Bán Xe Đạp tương tác xây dựng bằng Excel — phân tích 1.000 khách mua xe theo nhân khẩu học, thu nhập và hành vi mua." />
-    <meta name="keywords" content="Excel, Dashboard, Power Query, Pivot Table, Bán Xe Đạp, Phân tích dữ liệu" />
-    <meta name="author" content="VU THI LINH" />
+        <meta
+            property="og:description"
+            content="Dashboard Bán Xe Đạp tương tác xây dựng bằng Excel"
+        />
+        <meta
+            property="og:url"
+            content="https://vuthilinhvn.github.io/Personal-Portfolio/"
+        />
+        <meta property="og:site_name" content="Danh mục" />
+        <meta property="og:image" content="logo" />
 
-    <meta property="og:description" content="Dashboard Bán Xe Đạp tương tác xây dựng bằng Excel" />
-    <meta property="og:url" content="https://vuthilinhvn.github.io/Personal-Portfolio/" />
-    <meta property="og:site_name" content="Danh mục" />
-    <meta property="og:image" content="logo" />
+        <title>Dashboard Bán Xe Đạp</title>
 
-    <title>Dashboard Bán Xe Đạp</title>
+        <link
+            rel="stylesheet"
+            href="../../assets/base/tailwindcss/output.css"
+        />
+        <link
+            href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../../assets/base/styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
 
-    <link rel="stylesheet" href="../../assets/base/tailwindcss/output.css" />
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/base/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    </head>
 
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-</head>
-
-<body class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary">
-    <!-- Navbar -->
-    <nav id="nav"
-        class="translate-y-auto sticky top-0 z-40 h-max w-full flex justify-center bg-primary p-6 transition duration-500 lg:p-4">
-        <div class="flex items-center justify-center text-primary space-x-20 hidden lg:flex nav-links">
-            <a href="../../../../index.html" class="text-xl hover:text-secondary lg:text-base">
-                Trang chủ
-            </a>
-            <a href="../../portfolio/vi/portfolio.html" class="text-xl hover:text-secondary lg:text-base">
-                Danh mục
-            </a>
-        </div>
-
-        <div class="z-50 flex-none">
-            <div class="flex justify-end lg:hidden">
-                <button id="navButton"
-                    class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary">
-                    <svg class="navMenuIcon block w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z" />
-                    </svg>
-                    <svg class="navMenuIcon hidden w-8 fill-primary" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z" />
-                    </svg>
-                </button>
+    <body
+        class="mx-auto flex h-auto w-full flex-col flex-wrap justify-center overflow-x-hidden scroll-smooth bg-primary"
+    >
+        <!-- Navbar -->
+        <nav
+            id="nav"
+            class="translate-y-auto sticky top-0 z-40 flex h-max w-full justify-center bg-primary p-6 transition duration-500 lg:p-4"
+        >
+            <div
+                class="nav-links flex hidden items-center justify-center space-x-20 text-primary lg:flex"
+            >
+                <a
+                    href="../../../../index.html"
+                    class="text-xl hover:text-secondary lg:text-base"
+                >
+                    Trang chủ
+                </a>
+                <a
+                    href="../../portfolio/vi/portfolio.html"
+                    class="text-xl hover:text-secondary lg:text-base"
+                >
+                    Danh mục
+                </a>
             </div>
-        </div>
-    </nav>
 
-
-    <!-- Title -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
-        style="padding-top: 20px;">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white">Dashboard Bán Xe Đạp</h2>
-        </div>
-    </section>
-
-
-    <!-- Objective -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-up" data-aos-duration="1000"
-        style="padding-top: 40px;">
-        <div class="container mx-auto text-left py-10"
-            style="padding: 20px; border: 2px solid #FFFFFF; border-radius: 15px;">
-            <h3 class="text-3xl font-bold text-white">Mục tiêu:</h3>
-            <p class="text-gray-200 mt-4">
-                Dự án phân tích hành vi mua xe đạp của 1.000 khách hàng, nhằm xác định những yếu tố nhân khẩu học —
-                giới tính, độ tuổi, thu nhập, tình trạng hôn nhân, khu vực và khoảng cách đi làm — có ảnh hưởng mạnh
-                nhất đến quyết định mua xe. Sản phẩm cuối là một dashboard Excel tương tác đầy đủ với slicer, pivot
-                chart và pivot table, để người xem tự lọc và khám phá dữ liệu.
-            </p>
-        </div>
-    </section>
-
-
-    <!-- Download Button -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
-        style="padding-top: 40px; padding-bottom: 20px;">
-        <div class="container mx-auto text-center">
-            <a href="../../../../Excel-Project/Bike-Sales.xlsx"
-                download
-                style="display: inline-block; background-color: #333; color: white; font-weight: bold; padding: 20px 30px; text-align: center; text-decoration: none; border-radius: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-size: 1.25em;">
-                Tải file Excel
-            </a>
-        </div>
-    </section>
-
-
-    <!-- Highlights -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600" data-aos="fade-down" data-aos-duration="1000"
-        style="padding-top: 40px; padding-bottom: 20px;">
-        <div class="container mx-auto text-left py-10">
-            <h3 class="text-3xl font-bold text-white mb-6">Tổng quan dữ liệu:</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-10">
-                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
-                    <p class="text-gray-700 text-1xl mb-3">Số khách hàng</p>
-                    <p class="text-1xl font-bold" style="color: #0ea5e9;">1.000</p>
-                </div>
-                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
-                    <p class="text-gray-700 text-1xl mb-3">Thuộc tính phân tích</p>
-                    <p class="text-1xl font-bold" style="color: #0ea5e9;">13</p>
-                </div>
-                <div class="rounded-2xl border-2 border-cyan-300 p-8 bg-white shadow-2xl">
-                    <p class="text-gray-700 text-1xl mb-3">Khu vực</p>
-                    <p class="text-1xl font-bold" style="color: #0ea5e9;">Europe / Pacific / North America</p>
+            <div class="z-50 flex-none">
+                <div class="flex justify-end lg:hidden">
+                    <button
+                        id="navButton"
+                        class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary"
+                    >
+                        <svg
+                            class="navMenuIcon block w-8 fill-primary"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712-.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z"
+                            />
+                        </svg>
+                        <svg
+                            class="navMenuIcon hidden w-8 fill-primary"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="m12 13.4l-4.9 4.9q-.275.275-.7.275q-.425 0-.712-.288q-.287-.288-.287-.713q0-.425.287-.7l4.9-4.9l-4.9-4.9q-.288-.287-.288-.7q0-.425.287-.712q.288-.288 .713-.288q.425 0 .7 .287l4.9 4.9l4.9-4.9q.275-.287.7-.287q.425 0 .712.288q.288.288 .288.713q0 .425-.288 .7l-4.9 4.9l4.9 4.9q.288.275 .288 .7q0 .425-.288 .712q-.288.288-.713.288q-.425 0-.7-.287z"
+                            />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-
-    <!-- Methodology -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-right" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-4xl font-bold text-white">Phương pháp:</h3>
-
-            <h4 class="text-3xl font-bold mb-4 mt-8" style="color: #bec3cb;">
-                Bước 1 — Làm sạch dữ liệu (Power Query)
-            </h4>
-            <div class="text-white mt-4">
-                <ul class="list-disc pl-5 text-gray-200">
-                    <li>Loại bỏ ID trùng lặp trong sheet <em>bike_buyers</em> gốc.</li>
-                    <li>Chuẩn hóa <em>Marital Status</em> (M / S &rarr; Married / Single) và <em>Gender</em> (M / F &rarr; Male / Female).</li>
-                    <li>Thay null trong các cột số, ép kiểu lại cho Income / Age / Cars / Children.</li>
-                    <li>Bổ sung cột <em>Age Brackets</em> (Adolescent 12-35, Adult 35-59, Old &gt;60) để phân tích theo nhóm tuổi.</li>
-                </ul>
+        <!-- Title -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            style="padding-top: 20px"
+        >
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-white">
+                    Dashboard Bán Xe Đạp
+                </h2>
             </div>
-
-            <h4 class="text-3xl font-bold mb-4 mt-8" style="color: #bec3cb;">
-                Bước 2 — Pivot Table
-            </h4>
-            <div class="text-white mt-4">
-                <p>Ba pivot table được xây dựng trên <em>working sheet</em> đã làm sạch:</p>
-                <ul class="list-disc pl-5 text-gray-200 mt-2">
-                    <li><b>Thu nhập trung bình theo Giới tính &amp; Quyết định mua xe</b> — xem khách thu nhập cao có mua xe nhiều hơn không.</li>
-                    <li><b>Nhóm tuổi vs Quyết định mua xe</b> — xem nhóm tuổi nào mua xe nhiều nhất.</li>
-                    <li><b>Khoảng cách đi làm vs Quyết định mua xe</b> — kiểm tra commute distance có phải yếu tố dự báo không.</li>
-                </ul>
+        </section>
+        <!-- Header Image -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            style="padding-bottom: 300px"
+        >
+            <div
+                class="container mx-auto text-center"
+                style="display: flex; justify-content: center"
+            >
+                <img
+                    src="../../assets/img/Projects/bike-sales.png"
+                    alt="Header Image"
+                    style="max-width: 60%; height: 40%"
+                    class="rounded-lg shadow-xl"
+                />
             </div>
+        </section>
 
-            <h4 class="text-3xl font-bold mb-4 mt-8" style="color: #bec3cb;">
-                Bước 3 — Dashboard tương tác
-            </h4>
-            <div class="text-white mt-4">
-                <p>Các pivot table được chuyển thành pivot chart (bar chart cho Income, line chart cho Age Brackets và
-                    Commute Distance). Slicer cho <em>Marital Status</em>, <em>Region</em> và <em>Education</em> được
-                    gắn lên đầu dashboard để người xem lọc đồng thời mọi biểu đồ. Kết quả là một dashboard 1-trang
-                    phản hồi tức thì theo thao tác — giống hệt trải nghiệm khi mở file trong Excel.</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Interactive Embed -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white mb-6">Dashboard tương tác:</h3>
-            <p class="text-gray-200 mb-6">
-                File workbook bên dưới là file thực. Click các tab sheet ở dưới cùng để chuyển giữa
-                <b>bike_buyers</b> (dữ liệu thô), <b>working sheet</b> (đã làm sạch), <b>pivot table</b> và
-                <b>dashboard</b>. Dùng các slicer trong tab <b>dashboard</b> để lọc biểu đồ.
-            </p>
-
-            <div style="position: relative; width: 100%; padding-top: 70%; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
-                <iframe
-                    src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fvuthilinhvn.github.io%2FPersonal-Portfolio%2FExcel-Project%2FBike-Sales.xlsx"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="text-gray-300 text-sm mt-4 italic">
-                Lưu ý: phần nhúng load từ URL GitHub Pages công khai. Nếu bạn đang xem trang này ở chế độ local (file://)
-                trước khi deploy, Office viewer sẽ trống — hãy bấm nút tải file ở trên để mở trực tiếp bằng Excel.
-            </p>
-        </div>
-    </section>
-
-
-    <!-- Conclusion -->
-    <section class="bg-gradient-to-r from-navy-500 to-indigo-600 py-10" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container mx-auto text-left">
-            <h3 class="text-3xl font-bold text-white">Kết luận:</h3>
-            <div class="mt-8 text-white">
-                <p>
-                    Dashboard cho thấy lượng mua xe tập trung ở nhóm <b>Adolescent 12-35</b> và <b>Adult 35-59</b>,
-                    khách mua có thu nhập trung bình cao hơn người không mua, và khách có khoảng cách đi làm ngắn
-                    (0-5 dặm) có khả năng mua xe cao hơn rõ rệt. Đây là cơ sở để định hướng ngân sách marketing nếu
-                    đây là một chiến dịch thực tế.
+        <!-- Objective -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            style="padding-top: 40px"
+        >
+            <div
+                class="container mx-auto py-10 text-left"
+                style="
+                    padding: 20px;
+                    border: 2px solid #ffffff;
+                    border-radius: 15px;
+                "
+            >
+                <h3 class="text-3xl font-bold text-white">Mục tiêu:</h3>
+                <p class="mt-4 text-gray-200">
+                    Dự án phân tích hành vi mua xe đạp của 1.000 khách hàng,
+                    nhằm xác định những yếu tố nhân khẩu học — giới tính, độ
+                    tuổi, thu nhập, tình trạng hôn nhân, khu vực và khoảng cách
+                    đi làm — có ảnh hưởng mạnh nhất đến quyết định mua xe. Sản
+                    phẩm cuối là một dashboard Excel tương tác đầy đủ với
+                    slicer, pivot chart và pivot table, để người xem tự lọc và
+                    khám phá dữ liệu.
                 </p>
-                <br/>
-                <p>MIA VU</p>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Download Button -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            style="padding-top: 40px; padding-bottom: 20px"
+        >
+            <div class="container mx-auto text-center">
+                <a
+                    href="../../../../Excel-Project/Bike-Sales.xlsx"
+                    download
+                    style="
+                        display: inline-block;
+                        background-color: #333;
+                        color: white;
+                        font-weight: bold;
+                        padding: 20px 30px;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 0;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        font-size: 1.25em;
+                    "
+                >
+                    Tải file Excel
+                </a>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <section class="footer-section bg-dark-gray py-10">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-white text-4xl font-semibold mb-8">Liên hệ với tôi</h2>
-                    <p class="text-white text-lg font-light mb-4">Thượng Hải, Trung Quốc 200000</p>
-                    <p class="text-white text-lg font-light mb-8">Trung Quốc</p>
-                    <a href="mailto:vulinhtnut@gmail.com"
-                        class="text-blue-600 font-medium hover:text-blue-800 transition duration-300 ease-in-out">
-                        vulinhtnut@gmail.com</a>
-                </div>
-                <div class="flex justify-end items-start">
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/linh-v%C5%A9-024017335/"
-                        target="_blank" class="mx-3"><img src="../../assets/img/linkedin.png" alt="LinkedIn" width="32"></a>
-                        <a href="https://github.com/VuthilinhVn" target="_blank" class="mx-3"><img
-                                src="../../assets/img/github.png" alt="Github" width="32"></a>
+        <!-- Highlights -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            style="padding-top: 40px; padding-bottom: 20px"
+        >
+            <div class="container mx-auto py-10 text-left">
+                <h3 class="mb-6 text-3xl font-bold text-white">
+                    Tổng quan dữ liệu:
+                </h3>
+                <div class="mb-10 grid grid-cols-1 gap-3 md:grid-cols-3">
+                    <div
+                        class="rounded-2xl border-2 border-cyan-300 bg-white p-8 shadow-2xl"
+                    >
+                        <p class="text-1xl mb-3 text-gray-700">Số khách hàng</p>
+                        <p class="text-1xl font-bold" style="color: #0ea5e9">
+                            1.000
+                        </p>
+                    </div>
+                    <div
+                        class="rounded-2xl border-2 border-cyan-300 bg-white p-8 shadow-2xl"
+                    >
+                        <p class="text-1xl mb-3 text-gray-700">
+                            Thuộc tính phân tích
+                        </p>
+                        <p class="text-1xl font-bold" style="color: #0ea5e9">
+                            13
+                        </p>
+                    </div>
+                    <div
+                        class="rounded-2xl border-2 border-cyan-300 bg-white p-8 shadow-2xl"
+                    >
+                        <p class="text-1xl mb-3 text-gray-700">Khu vực</p>
+                        <p class="text-1xl font-bold" style="color: #0ea5e9">
+                            Europe / Pacific / North America
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Methodology -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600 py-10"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+        >
+            <div class="container mx-auto text-left">
+                <h3 class="text-4xl font-bold text-white">Phương pháp:</h3>
 
-</body>
-<script src="../../assets/custom/js/script.js"></script>
-<script src="../../assets/custom/js/language-switcher.js"></script>
+                <h4 class="mb-4 mt-8 text-3xl font-bold" style="color: #bec3cb">
+                    Bước 1 — Làm sạch dữ liệu (Power Query)
+                </h4>
+                <div class="mt-4 text-white">
+                    <ul class="list-disc pl-5 text-gray-200">
+                        <li>
+                            Loại bỏ ID trùng lặp trong sheet
+                            <em>bike_buyers</em> gốc.
+                        </li>
+                        <li>
+                            Chuẩn hóa <em>Marital Status</em> (M / S &rarr;
+                            Married / Single) và <em>Gender</em> (M / F &rarr;
+                            Male / Female).
+                        </li>
+                        <li>
+                            Thay null trong các cột số, ép kiểu lại cho Income /
+                            Age / Cars / Children.
+                        </li>
+                        <li>
+                            Bổ sung cột <em>Age Brackets</em> (Adolescent 12-35,
+                            Adult 35-59, Old &gt;60) để phân tích theo nhóm
+                            tuổi.
+                        </li>
+                    </ul>
+                </div>
 
-<script>
-    document.getElementById("navButton").addEventListener("click", function () {
-        const navLinks = document.querySelector(".nav-links");
-        navLinks.classList.toggle("hidden");
-        const openIcon = document.querySelector(".navMenuIcon.block");
-        const closeIcon = document.querySelector(".navMenuIcon.hidden");
-        openIcon.classList.toggle("hidden");
-        closeIcon.classList.toggle("block");
-    });
-</script>
+                <h4 class="mb-4 mt-8 text-3xl font-bold" style="color: #bec3cb">
+                    Bước 2 — Pivot Table
+                </h4>
+                <div class="mt-4 text-white">
+                    <p>
+                        Ba pivot table được xây dựng trên
+                        <em>working sheet</em> đã làm sạch:
+                    </p>
+                    <ul class="mt-2 list-disc pl-5 text-gray-200">
+                        <li>
+                            <b
+                                >Thu nhập trung bình theo Giới tính &amp; Quyết
+                                định mua xe</b
+                            >
+                            — xem khách thu nhập cao có mua xe nhiều hơn không.
+                        </li>
+                        <li>
+                            <b>Nhóm tuổi vs Quyết định mua xe</b> — xem nhóm
+                            tuổi nào mua xe nhiều nhất.
+                        </li>
+                        <li>
+                            <b>Khoảng cách đi làm vs Quyết định mua xe</b> —
+                            kiểm tra commute distance có phải yếu tố dự báo
+                            không.
+                        </li>
+                    </ul>
+                </div>
 
-<script>
-    AOS.init();
-</script>
+                <h4 class="mb-4 mt-8 text-3xl font-bold" style="color: #bec3cb">
+                    Bước 3 — Dashboard tương tác
+                </h4>
+                <div class="mt-4 text-white">
+                    <p>
+                        Các pivot table được chuyển thành pivot chart (bar chart
+                        cho Income, line chart cho Age Brackets và Commute
+                        Distance). Slicer cho <em>Marital Status</em>,
+                        <em>Region</em> và <em>Education</em> được gắn lên đầu
+                        dashboard để người xem lọc đồng thời mọi biểu đồ. Kết
+                        quả là một dashboard 1-trang phản hồi tức thì theo thao
+                        tác — giống hệt trải nghiệm khi mở file trong Excel.
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Interactive Embed -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600 py-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <div class="container mx-auto text-left">
+                <h3 class="mb-6 text-3xl font-bold text-white">
+                    Dashboard tương tác:
+                </h3>
+                <p class="mb-6 text-gray-200">
+                    File workbook bên dưới là file thực. Click các tab sheet ở
+                    dưới cùng để chuyển giữa
+                    <b>bike_buyers</b> (dữ liệu thô), <b>working sheet</b> (đã
+                    làm sạch), <b>pivot table</b> và <b>dashboard</b>. Dùng các
+                    slicer trong tab <b>dashboard</b> để lọc biểu đồ.
+                </p>
+
+                <div
+                    style="
+                        position: relative;
+                        width: 100%;
+                        padding-top: 70%;
+                        border-radius: 12px;
+                        overflow: hidden;
+                        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+                    "
+                >
+                    <iframe
+                        src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fvuthilinhvn.github.io%2FPersonal-Portfolio%2FExcel-Project%2FBike-Sales.xlsx"
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                        "
+                        frameborder="0"
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section
+            class="from-navy-500 bg-gradient-to-r to-indigo-600 py-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+            <div class="container mx-auto text-left">
+                <h3 class="text-3xl font-bold text-white">Kết luận:</h3>
+                <div class="mt-8 text-white">
+                    <p>
+                        Dashboard cho thấy lượng mua xe tập trung ở nhóm
+                        <b>Adolescent 12-35</b> và <b>Adult 35-59</b>, khách có
+                        thu nhập trung bình cao, và khách có khoảng cách đi làm
+                        ngắn (0-5 dặm) có khả năng mua xe cao hơn rõ rệt.
+                    </p>
+                    <br />
+                    <p>MIA VU</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="footer-section bg-dark-gray py-10">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="mb-8 text-4xl font-semibold text-white">
+                            Liên hệ với tôi
+                        </h2>
+                        <p class="mb-4 text-lg font-light text-white">
+                            Thượng Hải, Trung Quốc 200000
+                        </p>
+                        <p class="mb-8 text-lg font-light text-white">
+                            Trung Quốc
+                        </p>
+                        <a
+                            href="mailto:vulinhtnut@gmail.com"
+                            class="font-medium text-blue-600 transition duration-300 ease-in-out hover:text-blue-800"
+                        >
+                            vulinhtnut@gmail.com</a
+                        >
+                    </div>
+                    <div class="flex items-start justify-end">
+                        <div class="social-icons">
+                            <a
+                                href="https://www.linkedin.com/in/linh-v%C5%A9-024017335/"
+                                target="_blank"
+                                class="mx-3"
+                                ><img
+                                    src="../../assets/img/linkedin.png"
+                                    alt="LinkedIn"
+                                    width="32"
+                            /></a>
+                            <a
+                                href="https://github.com/VuthilinhVn"
+                                target="_blank"
+                                class="mx-3"
+                                ><img
+                                    src="../../assets/img/github.png"
+                                    alt="Github"
+                                    width="32"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="../../assets/custom/js/script.js"></script>
+    <script src="../../assets/custom/js/language-switcher.js"></script>
+
+    <script>
+        document
+            .getElementById("navButton")
+            .addEventListener("click", function () {
+                const navLinks = document.querySelector(".nav-links");
+                navLinks.classList.toggle("hidden");
+                const openIcon = document.querySelector(".navMenuIcon.block");
+                const closeIcon = document.querySelector(".navMenuIcon.hidden");
+                openIcon.classList.toggle("hidden");
+                closeIcon.classList.toggle("block");
+            });
+    </script>
+
+    <script>
+        AOS.init();
+    </script>
 </html>
